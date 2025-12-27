@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Entra Token CLI on Entra Token CLI Documentation</title><link>https://entratool-docs.garrardkitchen.com/</link><description>Recent content in Entra Token CLI on Entra Token CLI Documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://entratool-docs.garrardkitchen.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Authentication Profiles</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/profiles/</guid><description>&lt;h1 id="authentication-profiles"&gt;Authentication Profiles &lt;a href="#authentication-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Profiles are saved authentication configurations that store everything needed to generate tokens for a specific application or scenario.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="what-is-a-profile"&gt;What is a Profile? &lt;a href="#what-is-a-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A profile contains:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Profile name&lt;/strong&gt;: Unique identifier you choose&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tenant ID&lt;/strong&gt;: Your Azure/Entra ID tenant&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Client ID&lt;/strong&gt;: Application (client) ID from app registration&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scopes&lt;/strong&gt;: API permissions to request (e.g., &lt;code&gt;https://graph.microsoft.com/.default&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Authentication method&lt;/strong&gt;: How to authenticate (Client Secret, Certificate, or Passwordless Certificate)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Credentials&lt;/strong&gt;: Client secret or certificate path (stored securely)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Default OAuth2 flow&lt;/strong&gt; (optional): Preferred authentication flow&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Redirect URI&lt;/strong&gt; (optional): Custom redirect for interactive flows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="why-use-profiles"&gt;Why Use Profiles? &lt;a href="#why-use-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="convenience"&gt;Convenience &lt;a href="#convenience" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Store configuration once, reuse many times. No need to type tenant IDs and secrets repeatedly.&lt;/p&gt;</description></item><item><title>Installation</title><link>https://entratool-docs.garrardkitchen.com/docs/getting-started/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/getting-started/installation/</guid><description>&lt;h1 id="installation"&gt;Installation &lt;a href="#installation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Entra Token CLI can be installed as a .NET global tool or downloaded as a self-contained executable for your platform.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="option-1-net-global-tool-recommended"&gt;Option 1: .NET Global Tool (Recommended) &lt;a href="#option-1-net-global-tool-recommended" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: .NET Runtime 10.0 or later&lt;/p&gt;
+&lt;h3 id="install"&gt;Install &lt;a href="#install" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet tool install -g EntraTokenCli&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="update"&gt;Update &lt;a href="#update" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet tool update -g EntraTokenCli&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="uninstall"&gt;Uninstall &lt;a href="#uninstall" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet tool uninstall -g EntraTokenCli&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="verify-installation"&gt;Verify Installation &lt;a href="#verify-installation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool --version&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id="option-2-self-contained-executables"&gt;Option 2: Self-Contained Executables &lt;a href="#option-2-self-contained-executables" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Download the latest release for your platform from the &lt;a href="https://github.com/garrardkitchen/entra-token-cli/releases" rel="external" target="_blank"&gt;Releases page&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/&gt;&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Managing Profiles</title><link>https://entratool-docs.garrardkitchen.com/docs/user-guide/managing-profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/user-guide/managing-profiles/</guid><description>&lt;h1 id="managing-profiles"&gt;Managing Profiles &lt;a href="#managing-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Authentication profiles store your configuration for connecting to Microsoft Entra ID. Learn how to create, view, edit, and delete profiles.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="quick-reference"&gt;Quick Reference &lt;a href="#quick-reference" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Task&lt;/th&gt;
+ &lt;th&gt;Command&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Create new profile&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool config create&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;List all profiles&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool config list&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Edit existing profile&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool config edit -p NAME&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Delete profile&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool config delete -p NAME&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Export profile&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool config export -p NAME&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Import profile&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool config import -f FILE&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="creating-profiles"&gt;Creating Profiles &lt;a href="#creating-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="interactive-creation"&gt;Interactive Creation &lt;a href="#interactive-creation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The easiest way to create a profile:&lt;/p&gt;</description></item><item><title>Generating Tokens</title><link>https://entratool-docs.garrardkitchen.com/docs/user-guide/generating-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/user-guide/generating-tokens/</guid><description>&lt;h1 id="generating-tokens"&gt;Generating Tokens &lt;a href="#generating-tokens" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to generate access tokens using different OAuth2 flows and configurations.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="quick-reference"&gt;Quick Reference &lt;a href="#quick-reference" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Task&lt;/th&gt;
+ &lt;th&gt;Command&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Get token with profile&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool get-token -p PROFILE&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Override scope&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool get-token -p PROFILE --scope &amp;quot;SCOPE&amp;quot;&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Specify flow&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool get-token -p PROFILE -f FLOW&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Silent mode&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool get-token -p PROFILE --silent&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Save to file&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool get-token -p PROFILE -o token.txt&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Refresh token&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool refresh -p PROFILE&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="basic-token-generation"&gt;Basic Token Generation &lt;a href="#basic-token-generation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="using-a-profile"&gt;Using a Profile &lt;a href="#using-a-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool get-token -p my-profile&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>OAuth2 Flows</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/oauth2-flows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/oauth2-flows/</guid><description>&lt;h1 id="oauth2-flows"&gt;OAuth2 Flows &lt;a href="#oauth2-flows" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Entra Token CLI supports four OAuth2 authentication flows. Each flow is designed for specific scenarios and security requirements.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="flow-overview"&gt;Flow Overview &lt;a href="#flow-overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Flow&lt;/th&gt;
+ &lt;th&gt;Use Case&lt;/th&gt;
+ &lt;th&gt;User Interaction&lt;/th&gt;
+ &lt;th&gt;Token Type&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Client Credentials&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Service-to-service&lt;/td&gt;
+ &lt;td&gt;None&lt;/td&gt;
+ &lt;td&gt;Application&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Authorization Code&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Web apps&lt;/td&gt;
+ &lt;td&gt;Required&lt;/td&gt;
+ &lt;td&gt;User + Application&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Device Code&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Limited-input devices&lt;/td&gt;
+ &lt;td&gt;Required (on another device)&lt;/td&gt;
+ &lt;td&gt;User&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Interactive Browser&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Desktop apps&lt;/td&gt;
+ &lt;td&gt;Required&lt;/td&gt;
+ &lt;td&gt;User&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="client-credentials-flow"&gt;Client Credentials Flow &lt;a href="#client-credentials-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="when-to-use"&gt;When to Use &lt;a href="#when-to-use" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Automated services&lt;/strong&gt; and daemons&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CI/CD pipelines&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Background jobs&lt;/strong&gt; without user context&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Service-to-service&lt;/strong&gt; authentication&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="how-it-works"&gt;How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Application authenticates with client ID + secret (or certificate)&lt;/li&gt;
+&lt;li&gt;Entra ID validates credentials&lt;/li&gt;
+&lt;li&gt;Returns application-only access token&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="requirements"&gt;Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;App registration with &lt;strong&gt;Application permissions&lt;/strong&gt; (not Delegated)&lt;/li&gt;
+&lt;li&gt;Admin consent granted&lt;/li&gt;
+&lt;li&gt;Client secret or certificate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="example"&gt;Example &lt;a href="#example" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool get-token -p service-principal -f ClientCredentials&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/"&gt;Full guide →&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Quick Start</title><link>https://entratool-docs.garrardkitchen.com/docs/getting-started/quickstart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/getting-started/quickstart/</guid><description>&lt;h1 id="quick-start"&gt;Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Generate your first Entra ID access token in just a few minutes!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="step-1-install-the-tool"&gt;Step 1: Install the Tool &lt;a href="#step-1-install-the-tool" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet tool install -g EntraTokenCli&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/getting-started/installation/"&gt;See all installation options →&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="step-2-create-your-first-profile"&gt;Step 2: Create Your First Profile &lt;a href="#step-2-create-your-first-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Run the interactive profile creation:&lt;/p&gt;
+
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool config create&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;You&amp;rsquo;ll be prompted for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Profile name&lt;/strong&gt;: &lt;code&gt;myprofile&lt;/code&gt; (or any name you choose)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tenant ID&lt;/strong&gt;: Your Azure tenant ID (e.g., &lt;code&gt;contoso.onmicrosoft.com&lt;/code&gt; or GUID)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Client ID&lt;/strong&gt;: Your app registration client ID&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scopes&lt;/strong&gt;: &lt;code&gt;https://graph.microsoft.com/.default&lt;/code&gt; (default for Microsoft Graph)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Auth method&lt;/strong&gt;: Choose &lt;code&gt;ClientSecret&lt;/code&gt; for this quick start&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Client secret&lt;/strong&gt;: Your app&amp;rsquo;s client secret (securely stored)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>First Token Tutorial</title><link>https://entratool-docs.garrardkitchen.com/docs/getting-started/first-token/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/getting-started/first-token/</guid><description>&lt;h1 id="your-first-token---complete-tutorial"&gt;Your First Token - Complete Tutorial &lt;a href="#your-first-token---complete-tutorial" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;This tutorial walks you through the complete process from setting up an app registration in Azure to generating your first token.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="prerequisites"&gt;Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Azure subscription with access to create app registrations&lt;/li&gt;
+&lt;li&gt;Entra Token CLI installed (&lt;a href="https://entratool-docs.garrardkitchen.com/docs/getting-started/installation/"&gt;Installation Guide&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Basic understanding of Azure and authentication concepts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="step-1-create-an-app-registration"&gt;Step 1: Create an App Registration &lt;a href="#step-1-create-an-app-registration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="11-navigate-to-azure-portal"&gt;1.1 Navigate to Azure Portal &lt;a href="#11-navigate-to-azure-portal" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Go to &lt;a href="https://portal.azure.com" rel="external" target="_blank"&gt;Azure Portal&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Navigate to &lt;strong&gt;Azure Active Directory&lt;/strong&gt; (or &lt;strong&gt;Microsoft Entra ID&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Select &lt;strong&gt;App registrations&lt;/strong&gt; from the left menu&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;New registration&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="12-register-your-application"&gt;1.2 Register Your Application &lt;a href="#12-register-your-application" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Fill in the registration form:&lt;/p&gt;</description></item><item><title>Scopes &amp; Permissions</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/scopes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/scopes/</guid><description>&lt;h1 id="scopes--permissions"&gt;Scopes &amp;amp; Permissions &lt;a href="#scopes--permissions" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Scopes define what your application can access using an access token. Understanding scopes is critical for requesting the right permissions and troubleshooting authorization issues.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="what-are-scopes"&gt;What Are Scopes? &lt;a href="#what-are-scopes" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A &lt;strong&gt;scope&lt;/strong&gt; is a permission that grants access to specific resources or operations in an API.&lt;/p&gt;
+&lt;h3 id="format"&gt;Format &lt;a href="#format" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;pre tabindex="0"&gt;&lt;code&gt;https://api.example.com/.default
+https://graph.microsoft.com/User.Read
+https://management.azure.com/user_impersonation&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Parts:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Resource URI&lt;/strong&gt;: The API you&amp;rsquo;re accessing (&lt;code&gt;https://graph.microsoft.com&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permission&lt;/strong&gt;: The specific capability (&lt;code&gt;User.Read&lt;/code&gt;, &lt;code&gt;.default&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="common-scope-patterns"&gt;Common Scope Patterns &lt;a href="#common-scope-patterns" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="microsoft-graph-api"&gt;Microsoft Graph API &lt;a href="#microsoft-graph-api" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;3
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;4
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;5
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;6
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;7
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;8
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Read user profile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://graph.microsoft.com/User.Read
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Read user profile and email&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://graph.microsoft.com/User.Read
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://graph.microsoft.com/Mail.Read
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# All configured permissions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://graph.microsoft.com/.default&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="azure-management-api"&gt;Azure Management API &lt;a href="#azure-management-api" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;3
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;4
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Azure Resource Manager access&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://management.azure.com/.default
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# With user impersonation&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://management.azure.com/user_impersonation&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="custom-apis"&gt;Custom APIs &lt;a href="#custom-apis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;3
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;4
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Your custom API&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://api.contoso.com/.default
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Specific scopes&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="azure-key-vault"&gt;Azure Key Vault &lt;a href="#azure-key-vault" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://vault.azure.net/.default&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="azure-storage"&gt;Azure Storage &lt;a href="#azure-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://storage.azure.com/.default&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id="the-default-scope"&gt;The &lt;code&gt;.default&lt;/code&gt; Scope &lt;a href="#the-default-scope" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="what-it-means"&gt;What It Means &lt;a href="#what-it-means" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;.default&lt;/code&gt; suffix requests &lt;strong&gt;all permissions configured&lt;/strong&gt; in your app registration.&lt;/p&gt;</description></item><item><title>Working with Tokens</title><link>https://entratool-docs.garrardkitchen.com/docs/user-guide/working-with-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/user-guide/working-with-tokens/</guid><description>&lt;h1 id="working-with-tokens"&gt;Working with Tokens &lt;a href="#working-with-tokens" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Once you have an access token, learn how to inspect, validate, refresh, and use it effectively with APIs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="quick-reference"&gt;Quick Reference &lt;a href="#quick-reference" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Task&lt;/th&gt;
+ &lt;th&gt;Command&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Inspect token&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool inspect -t TOKEN&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Inspect from file&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool inspect -f token.txt&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Discover token info&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool discover -t TOKEN&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Refresh token&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool refresh -p PROFILE&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Check expiration&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entratool discover -t TOKEN | jq .exp&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="token-inspection"&gt;Token Inspection &lt;a href="#token-inspection" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="decode-jwt-claims"&gt;Decode JWT Claims &lt;a href="#decode-jwt-claims" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool inspect -t &lt;span style="color:#e6db74"&gt;&amp;#34;eyJ0eXAiOiJKV1QiLCJh...&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Recipes &amp; Examples</title><link>https://entratool-docs.garrardkitchen.com/docs/recipes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/recipes/</guid><description>&lt;h1 id="recipes--examples"&gt;Recipes &amp;amp; Examples &lt;a href="#recipes--examples" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Real-world examples and patterns for integrating Entra Token CLI into your workflows.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="quick-navigation"&gt;Quick Navigation &lt;a href="#quick-navigation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="api-integration"&gt;API Integration &lt;a href="#api-integration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/microsoft-graph/"&gt;Microsoft Graph API&lt;/a&gt; - User management, email, calendars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/azure-management/"&gt;Azure Management API&lt;/a&gt; - Resource management&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/custom-apis/"&gt;Custom APIs&lt;/a&gt; - Your own API integration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="automation"&gt;Automation &lt;a href="#automation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/cicd-integration/"&gt;CI/CD Integration&lt;/a&gt; - GitHub Actions, Azure Pipelines&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/bash-scripts/"&gt;Bash Scripts&lt;/a&gt; - Shell scripting patterns&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/powershell-scripts/"&gt;PowerShell Scripts&lt;/a&gt; - Windows automation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="security"&gt;Security &lt;a href="#security" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/security-hardening/"&gt;Security Hardening&lt;/a&gt; - Production best practices&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/secret-rotation/"&gt;Secret Rotation&lt;/a&gt; - Credential lifecycle&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/multi-environment/"&gt;Multi-Environment Setup&lt;/a&gt; - Dev/staging/prod&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="advanced"&gt;Advanced &lt;a href="#advanced" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/token-caching/"&gt;Token Caching&lt;/a&gt; - Optimize performance&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/error-handling/"&gt;Error Handling&lt;/a&gt; - Robust scripts&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/multi-tenant/"&gt;Multi-Tenant Scenarios&lt;/a&gt; - Multiple tenants&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="microsoft-graph-api"&gt;Microsoft Graph API &lt;a href="#microsoft-graph-api" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="read-user-profile"&gt;Read User Profile &lt;a href="#read-user-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;3
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;4
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;TOKEN&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;entratool get-token -p graph-readonly --silent&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -H &lt;span style="color:#e6db74"&gt;&amp;#34;Authorization: Bearer &lt;/span&gt;$TOKEN&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; https://graph.microsoft.com/v1.0/me | jq&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="list-all-users"&gt;List All Users &lt;a href="#list-all-users" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;3
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;4
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;TOKEN&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;entratool get-token -p graph-admin --silent&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -H &lt;span style="color:#e6db74"&gt;&amp;#34;Authorization: Bearer &lt;/span&gt;$TOKEN&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;https://graph.microsoft.com/v1.0/users?$select=displayName,mail&amp;#39;&lt;/span&gt; | jq&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="send-email"&gt;Send Email &lt;a href="#send-email" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 1
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 2
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 3
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 4
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 5
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 6
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 7
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 8
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 9
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;10
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;11
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;12
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;13
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;14
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;15
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;16
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;17
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;18
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;19
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;20
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;21
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;22
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;23
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;24
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;25
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;TOKEN&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;entratool get-token -p graph-mail --silent &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --scope &lt;span style="color:#e6db74"&gt;&amp;#34;https://graph.microsoft.com/Mail.Send&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -X POST &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -H &lt;span style="color:#e6db74"&gt;&amp;#34;Authorization: Bearer &lt;/span&gt;$TOKEN&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -H &lt;span style="color:#e6db74"&gt;&amp;#34;Content-Type: application/json&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -d &lt;span style="color:#e6db74"&gt;&amp;#39;{
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;message&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;subject&amp;#34;: &amp;#34;Test Email&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;body&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;contentType&amp;#34;: &amp;#34;Text&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;content&amp;#34;: &amp;#34;This is a test email from Entra Token CLI&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;toRecipients&amp;#34;: [
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;emailAddress&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;address&amp;#34;: &amp;#34;user@contoso.com&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;saveToSentItems&amp;#34;: &amp;#34;true&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; }&amp;#39;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; https://graph.microsoft.com/v1.0/me/sendMail&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/recipes/microsoft-graph/"&gt;More Microsoft Graph examples →&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Secure Storage</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/secure-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/secure-storage/</guid><description>&lt;h1 id="secure-storage"&gt;Secure Storage &lt;a href="#secure-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Entra Token CLI uses platform-specific secure storage mechanisms to protect sensitive authentication data. Understanding how secrets are stored helps you make informed security decisions.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="platform-security-overview"&gt;Platform Security Overview &lt;a href="#platform-security-overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Platform&lt;/th&gt;
+ &lt;th&gt;Mechanism&lt;/th&gt;
+ &lt;th&gt;Security Level&lt;/th&gt;
+ &lt;th&gt;Notes&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Windows&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;DPAPI&lt;/td&gt;
+ &lt;td&gt;🔒 &lt;strong&gt;Strong&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;User-account encryption&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;macOS&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Keychain&lt;/td&gt;
+ &lt;td&gt;🔒 &lt;strong&gt;Strong&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;System-level encryption&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Linux&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;XOR Obfuscation&lt;/td&gt;
+ &lt;td&gt;⚠️ &lt;strong&gt;Weak&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Not secure for production&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="what-gets-stored"&gt;What Gets Stored &lt;a href="#what-gets-stored" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="profile-configuration-plaintext"&gt;Profile Configuration (Plaintext) &lt;a href="#profile-configuration-plaintext" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Location:&lt;/strong&gt; &lt;code&gt;~/.entratool/profiles.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stored in plaintext:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>OAuth2 Flows</title><link>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/</guid><description>&lt;h1 id="oauth2-flows"&gt;OAuth2 Flows &lt;a href="#oauth2-flows" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Comprehensive guides for each supported OAuth2 authentication flow.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Entra Token CLI supports four OAuth2 authentication flows, each designed for specific scenarios:&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Flow&lt;/th&gt;
+ &lt;th&gt;Best For&lt;/th&gt;
+ &lt;th&gt;User Interaction&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/"&gt;Client Credentials&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Service-to-service&lt;/td&gt;
+ &lt;td&gt;None&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/oauth-flows/authorization-code/"&gt;Authorization Code&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Web applications&lt;/td&gt;
+ &lt;td&gt;Required&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/oauth-flows/device-code/"&gt;Device Code&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Limited-input devices&lt;/td&gt;
+ &lt;td&gt;Required (on another device)&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/"&gt;Interactive Browser&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Desktop applications&lt;/td&gt;
+ &lt;td&gt;Required&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="quick-overview"&gt;Quick Overview &lt;a href="#quick-overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For a quick overview of all flows, see the &lt;a href="https://entratool-docs.garrardkitchen.com/docs/core-concepts/oauth2-flows/"&gt;OAuth2 Flows Core Concept&lt;/a&gt; page.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="detailed-guides"&gt;Detailed Guides &lt;a href="#detailed-guides" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="client-credentials-flow"&gt;Client Credentials Flow &lt;a href="#client-credentials-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Use for:&lt;/strong&gt; Automated services, daemons, CI/CD pipelines&lt;/p&gt;</description></item><item><title>Certificate Authentication</title><link>https://entratool-docs.garrardkitchen.com/docs/certificates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/certificates/</guid><description>&lt;h1 id="certificate-authentication"&gt;Certificate Authentication &lt;a href="#certificate-authentication" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to use X.509 certificates for secure, passwordless authentication with Microsoft Entra ID.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="why-use-certificates"&gt;Why Use Certificates? &lt;a href="#why-use-certificates" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="advantages-over-client-secrets"&gt;Advantages Over Client Secrets &lt;a href="#advantages-over-client-secrets" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Feature&lt;/th&gt;
+ &lt;th&gt;Client Secret&lt;/th&gt;
+ &lt;th&gt;Certificate&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Security&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Medium&lt;/td&gt;
+ &lt;td&gt;High&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Validity Period&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Up to 2 years&lt;/td&gt;
+ &lt;td&gt;Up to 3 years&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Rotation&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Manual&lt;/td&gt;
+ &lt;td&gt;Automated possible&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Compromise Risk&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Higher&lt;/td&gt;
+ &lt;td&gt;Lower&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Audit Trail&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Limited&lt;/td&gt;
+ &lt;td&gt;Better&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="when-to-use-certificates"&gt;When to Use Certificates &lt;a href="#when-to-use-certificates" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;✅ &lt;strong&gt;Use certificates for:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Production service principals&lt;/li&gt;
+&lt;li&gt;Long-running automated services&lt;/li&gt;
+&lt;li&gt;High-security requirements&lt;/li&gt;
+&lt;li&gt;Certificate-based infrastructure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;Stick with secrets for:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Command Reference</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/reference/</guid><description>&lt;h1 id="command-reference"&gt;Command Reference &lt;a href="#command-reference" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Complete documentation for all Entra Token CLI commands, options, and arguments.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="command-overview"&gt;Command Overview &lt;a href="#command-overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Command&lt;/th&gt;
+ &lt;th&gt;Description&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/reference/commands/get-token/"&gt;&lt;code&gt;get-token&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Generate access tokens&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/reference/commands/refresh/"&gt;&lt;code&gt;refresh&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Refresh expired tokens&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/reference/commands/inspect/"&gt;&lt;code&gt;inspect&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Decode and inspect JWT tokens&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/reference/commands/discover/"&gt;&lt;code&gt;discover&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Quick token information&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/reference/commands/config/"&gt;&lt;code&gt;config&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Manage authentication profiles&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/reference/commands/help/"&gt;&lt;code&gt;--help&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Display help information&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/reference/commands/version/"&gt;&lt;code&gt;--version&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Show version information&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="get-token"&gt;&lt;code&gt;get-token&lt;/code&gt; &lt;a href="#get-token" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Generate an access token using a configured profile.&lt;/p&gt;
+&lt;h3 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool get-token &lt;span style="color:#f92672"&gt;[&lt;/span&gt;OPTIONS&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="options"&gt;Options &lt;a href="#options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Option&lt;/th&gt;
+ &lt;th&gt;Alias&lt;/th&gt;
+ &lt;th&gt;Required&lt;/th&gt;
+ &lt;th&gt;Description&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;--profile &amp;lt;NAME&amp;gt;&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;-p&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Yes&lt;/td&gt;
+ &lt;td&gt;Profile name to use&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;--scope &amp;lt;SCOPE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;-s&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;No&lt;/td&gt;
+ &lt;td&gt;Override profile scope&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;--flow &amp;lt;FLOW&amp;gt;&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;-f&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;No&lt;/td&gt;
+ &lt;td&gt;OAuth2 flow to use&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;--silent&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;No&lt;/td&gt;
+ &lt;td&gt;Suppress output except token&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;--output &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;-o&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;No&lt;/td&gt;
+ &lt;td&gt;Save token to file&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;--json&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;No&lt;/td&gt;
+ &lt;td&gt;Output as JSON&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="oauth2-flows"&gt;OAuth2 Flows &lt;a href="#oauth2-flows" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ClientCredentials&lt;/code&gt; - Service-to-service&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AuthorizationCode&lt;/code&gt; - Web applications&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DeviceCode&lt;/code&gt; - Limited-input devices&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;InteractiveBrowser&lt;/code&gt; - Desktop applications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="examples"&gt;Examples &lt;a href="#examples" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Basic usage:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Platform Guides</title><link>https://entratool-docs.garrardkitchen.com/docs/platform-guides/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/platform-guides/</guid><description>&lt;h1 id="platform-guides"&gt;Platform Guides &lt;a href="#platform-guides" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Platform-specific configuration, security considerations, and best practices for Windows, macOS, and Linux.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Entra Token CLI works across all major platforms, but each has unique characteristics for secure storage and certificate management.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Platform&lt;/th&gt;
+ &lt;th&gt;Secure Storage&lt;/th&gt;
+ &lt;th&gt;Security Level&lt;/th&gt;
+ &lt;th&gt;Production Ready&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Windows&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;DPAPI&lt;/td&gt;
+ &lt;td&gt;🔒 Strong&lt;/td&gt;
+ &lt;td&gt;✅ Yes&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;macOS&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Keychain&lt;/td&gt;
+ &lt;td&gt;🔒 Strong&lt;/td&gt;
+ &lt;td&gt;✅ Yes&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Linux&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;XOR Obfuscation&lt;/td&gt;
+ &lt;td&gt;⚠️ Weak&lt;/td&gt;
+ &lt;td&gt;⚠️ Use alternatives&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="windows"&gt;Windows &lt;a href="#windows" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="installation"&gt;Installation &lt;a href="#installation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Global Tool:&lt;/strong&gt;&lt;/p&gt;
+
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet tool install --global EntraTokenCli&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Self-Contained Executable:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Troubleshooting</title><link>https://entratool-docs.garrardkitchen.com/docs/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/troubleshooting/</guid><description>&lt;h1 id="troubleshooting"&gt;Troubleshooting &lt;a href="#troubleshooting" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Solutions to common problems and error messages.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="profile-issues"&gt;Profile Issues &lt;a href="#profile-issues" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="profile-not-found"&gt;&amp;ldquo;Profile not found&amp;rdquo; &lt;a href="#profile-not-found" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Error:&lt;/strong&gt;&lt;/p&gt;
+
+
+ 
+ &lt;pre tabindex="0"&gt;&lt;code&gt;Error: Profile &amp;#39;my-profile&amp;#39; not found&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Cause:&lt;/strong&gt; Profile name is incorrect or doesn&amp;rsquo;t exist.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt;&lt;/p&gt;
+
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;3
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;4
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# List available profiles&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool config list
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Use correct name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool get-token -p correct-profile-name&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id="profile-already-exists"&gt;&amp;ldquo;Profile already exists&amp;rdquo; &lt;a href="#profile-already-exists" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Error:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Core Concepts on Entra Token CLI Documentation</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/</link><description>Recent content in Core Concepts on Entra Token CLI Documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://entratool-docs.garrardkitchen.com/docs/core-concepts/index.xml" rel="self" type="application/rss+xml"/><item><title>Authentication Profiles</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/profiles/</guid><description>&lt;h1 id="authentication-profiles"&gt;Authentication Profiles &lt;a href="#authentication-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Profiles are saved authentication configurations that store everything needed to generate tokens for a specific application or scenario.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="what-is-a-profile"&gt;What is a Profile? &lt;a href="#what-is-a-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A profile contains:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Profile name&lt;/strong&gt;: Unique identifier you choose&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tenant ID&lt;/strong&gt;: Your Azure/Entra ID tenant&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Client ID&lt;/strong&gt;: Application (client) ID from app registration&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scopes&lt;/strong&gt;: API permissions to request (e.g., &lt;code&gt;https://graph.microsoft.com/.default&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Authentication method&lt;/strong&gt;: How to authenticate (Client Secret, Certificate, or Passwordless Certificate)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Credentials&lt;/strong&gt;: Client secret or certificate path (stored securely)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Default OAuth2 flow&lt;/strong&gt; (optional): Preferred authentication flow&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Redirect URI&lt;/strong&gt; (optional): Custom redirect for interactive flows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="why-use-profiles"&gt;Why Use Profiles? &lt;a href="#why-use-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="convenience"&gt;Convenience &lt;a href="#convenience" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Store configuration once, reuse many times. No need to type tenant IDs and secrets repeatedly.&lt;/p&gt;</description></item><item><title>OAuth2 Flows</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/oauth2-flows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/oauth2-flows/</guid><description>&lt;h1 id="oauth2-flows"&gt;OAuth2 Flows &lt;a href="#oauth2-flows" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Entra Token CLI supports four OAuth2 authentication flows. Each flow is designed for specific scenarios and security requirements.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="flow-overview"&gt;Flow Overview &lt;a href="#flow-overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Flow&lt;/th&gt;
+ &lt;th&gt;Use Case&lt;/th&gt;
+ &lt;th&gt;User Interaction&lt;/th&gt;
+ &lt;th&gt;Token Type&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Client Credentials&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Service-to-service&lt;/td&gt;
+ &lt;td&gt;None&lt;/td&gt;
+ &lt;td&gt;Application&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Authorization Code&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Web apps&lt;/td&gt;
+ &lt;td&gt;Required&lt;/td&gt;
+ &lt;td&gt;User + Application&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Device Code&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Limited-input devices&lt;/td&gt;
+ &lt;td&gt;Required (on another device)&lt;/td&gt;
+ &lt;td&gt;User&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Interactive Browser&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Desktop apps&lt;/td&gt;
+ &lt;td&gt;Required&lt;/td&gt;
+ &lt;td&gt;User&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="client-credentials-flow"&gt;Client Credentials Flow &lt;a href="#client-credentials-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="when-to-use"&gt;When to Use &lt;a href="#when-to-use" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Automated services&lt;/strong&gt; and daemons&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CI/CD pipelines&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Background jobs&lt;/strong&gt; without user context&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Service-to-service&lt;/strong&gt; authentication&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="how-it-works"&gt;How It Works &lt;a href="#how-it-works" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Application authenticates with client ID + secret (or certificate)&lt;/li&gt;
+&lt;li&gt;Entra ID validates credentials&lt;/li&gt;
+&lt;li&gt;Returns application-only access token&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="requirements"&gt;Requirements &lt;a href="#requirements" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;App registration with &lt;strong&gt;Application permissions&lt;/strong&gt; (not Delegated)&lt;/li&gt;
+&lt;li&gt;Admin consent granted&lt;/li&gt;
+&lt;li&gt;Client secret or certificate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="example"&gt;Example &lt;a href="#example" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool get-token -p service-principal -f ClientCredentials&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/"&gt;Full guide →&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Scopes &amp; Permissions</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/scopes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/scopes/</guid><description>&lt;h1 id="scopes--permissions"&gt;Scopes &amp;amp; Permissions &lt;a href="#scopes--permissions" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Scopes define what your application can access using an access token. Understanding scopes is critical for requesting the right permissions and troubleshooting authorization issues.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="what-are-scopes"&gt;What Are Scopes? &lt;a href="#what-are-scopes" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A &lt;strong&gt;scope&lt;/strong&gt; is a permission that grants access to specific resources or operations in an API.&lt;/p&gt;
+&lt;h3 id="format"&gt;Format &lt;a href="#format" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;pre tabindex="0"&gt;&lt;code&gt;https://api.example.com/.default
+https://graph.microsoft.com/User.Read
+https://management.azure.com/user_impersonation&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Parts:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Resource URI&lt;/strong&gt;: The API you&amp;rsquo;re accessing (&lt;code&gt;https://graph.microsoft.com&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permission&lt;/strong&gt;: The specific capability (&lt;code&gt;User.Read&lt;/code&gt;, &lt;code&gt;.default&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="common-scope-patterns"&gt;Common Scope Patterns &lt;a href="#common-scope-patterns" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="microsoft-graph-api"&gt;Microsoft Graph API &lt;a href="#microsoft-graph-api" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;3
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;4
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;5
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;6
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;7
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;8
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Read user profile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://graph.microsoft.com/User.Read
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Read user profile and email&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://graph.microsoft.com/User.Read
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://graph.microsoft.com/Mail.Read
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# All configured permissions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://graph.microsoft.com/.default&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="azure-management-api"&gt;Azure Management API &lt;a href="#azure-management-api" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;3
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;4
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Azure Resource Manager access&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://management.azure.com/.default
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# With user impersonation&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://management.azure.com/user_impersonation&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="custom-apis"&gt;Custom APIs &lt;a href="#custom-apis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;3
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;4
+&lt;/span&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Your custom API&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://api.contoso.com/.default
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Specific scopes&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="azure-key-vault"&gt;Azure Key Vault &lt;a href="#azure-key-vault" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://vault.azure.net/.default&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="azure-storage"&gt;Azure Storage &lt;a href="#azure-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://storage.azure.com/.default&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id="the-default-scope"&gt;The &lt;code&gt;.default&lt;/code&gt; Scope &lt;a href="#the-default-scope" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="what-it-means"&gt;What It Means &lt;a href="#what-it-means" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;.default&lt;/code&gt; suffix requests &lt;strong&gt;all permissions configured&lt;/strong&gt; in your app registration.&lt;/p&gt;</description></item><item><title>Secure Storage</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/secure-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/secure-storage/</guid><description>&lt;h1 id="secure-storage"&gt;Secure Storage &lt;a href="#secure-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Entra Token CLI uses platform-specific secure storage mechanisms to protect sensitive authentication data. Understanding how secrets are stored helps you make informed security decisions.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="platform-security-overview"&gt;Platform Security Overview &lt;a href="#platform-security-overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Platform&lt;/th&gt;
+ &lt;th&gt;Mechanism&lt;/th&gt;
+ &lt;th&gt;Security Level&lt;/th&gt;
+ &lt;th&gt;Notes&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Windows&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;DPAPI&lt;/td&gt;
+ &lt;td&gt;🔒 &lt;strong&gt;Strong&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;User-account encryption&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;macOS&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Keychain&lt;/td&gt;
+ &lt;td&gt;🔒 &lt;strong&gt;Strong&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;System-level encryption&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Linux&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;XOR Obfuscation&lt;/td&gt;
+ &lt;td&gt;⚠️ &lt;strong&gt;Weak&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Not secure for production&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="what-gets-stored"&gt;What Gets Stored &lt;a href="#what-gets-stored" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="profile-configuration-plaintext"&gt;Profile Configuration (Plaintext) &lt;a href="#profile-configuration-plaintext" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Location:&lt;/strong&gt; &lt;code&gt;~/.entratool/profiles.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stored in plaintext:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
