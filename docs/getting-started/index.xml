@@ -19,8 +19,8 @@
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="ce4c521" class="language-bash line-numbers"&gt;
- &lt;code&gt;dotnet tool install -g EntraTokenCli&lt;/code&gt;
+ &lt;pre id="d5cd523" class="language-bash line-numbers"&gt;
+ &lt;code&gt;dotnet tool install -g EntraAuthCli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="update"&gt;Update &lt;a href="#update" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -41,8 +41,8 @@
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="eba096b" class="language-bash line-numbers"&gt;
- &lt;code&gt;dotnet tool update -g EntraTokenCli&lt;/code&gt;
+ &lt;pre id="7a3cb3f" class="language-bash line-numbers"&gt;
+ &lt;code&gt;dotnet tool update -g EntraAuthCli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="uninstall"&gt;Uninstall &lt;a href="#uninstall" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -63,8 +63,8 @@
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="1b6cab2" class="language-bash line-numbers"&gt;
- &lt;code&gt;dotnet tool uninstall -g EntraTokenCli&lt;/code&gt;
+ &lt;pre id="76be9ab" class="language-bash line-numbers"&gt;
+ &lt;code&gt;dotnet tool uninstall -g EntraAuthCli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="verify-installation"&gt;Verify Installation &lt;a href="#verify-installation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -110,8 +110,8 @@
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="ce4c521" class="language-bash line-numbers"&gt;
- &lt;code&gt;dotnet tool install -g EntraTokenCli&lt;/code&gt;
+ &lt;pre id="d5cd523" class="language-bash line-numbers"&gt;
+ &lt;code&gt;dotnet tool install -g EntraAuthCli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;p&gt;&lt;a href="https://entra-auth-cli-docs.garrardkitchen.com/docs/getting-started/installation/"&gt;See all installation options →&lt;/a&gt;&lt;/p&gt;

@@ -326,7 +326,7 @@ openssl pkcs12 -export \
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="12101d7" class="language-yaml "&gt;
+ &lt;pre id="1f65c83" class="language-yaml "&gt;
  &lt;code&gt;name: Deploy
 
 on: [push]
@@ -339,7 +339,7 @@ jobs:
  
  - name: Install Entra Auth Cli
  run: |
- dotnet tool install --global EntraTokenCli
+ dotnet tool install --global EntraAuthCli
  
  - name: Create Profile
  env:
@@ -388,7 +388,7 @@ jobs:
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="116437c" class="language-yaml "&gt;
+ &lt;pre id="e6bf204" class="language-yaml "&gt;
  &lt;code&gt;name: Multi-Environment Deploy
 
 on: [push]
@@ -403,7 +403,7 @@ jobs:
  - uses: actions/checkout@v3
  
  - name: Setup Entra Auth Cli
- run: dotnet tool install --global EntraTokenCli
+ run: dotnet tool install --global EntraAuthCli
  
  - name: Deploy to ${{ matrix.environment }}
  env:
@@ -436,7 +436,7 @@ jobs:
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="444f1bc" class="language-yaml "&gt;
+ &lt;pre id="cdead38" class="language-yaml "&gt;
  &lt;code&gt;trigger:
  - main
 
@@ -445,7 +445,7 @@ pool:
 
 steps:
 - script: |
- dotnet tool install --global EntraTokenCli
+ dotnet tool install --global EntraAuthCli
  displayName: &amp;#39;Install Entra Auth Cli&amp;#39;
 
 - task: AzureCLI@2
@@ -484,7 +484,7 @@ steps:
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="ce4f022" class="language-yaml "&gt;
+ &lt;pre id="e0eec80" class="language-yaml "&gt;
  &lt;code&gt;trigger:
  - main
 
@@ -508,7 +508,7 @@ stages:
  runOnce:
  deploy:
  steps:
- - script: dotnet tool install --global EntraTokenCli
+ - script: dotnet tool install --global EntraAuthCli
  displayName: &amp;#39;Install CLI&amp;#39;
  
  - script: |
@@ -537,7 +537,7 @@ stages:
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="9416df5" class="language-yaml "&gt;
+ &lt;pre id="13debbd" class="language-yaml "&gt;
  &lt;code&gt;stages:
  - deploy
 
@@ -545,7 +545,7 @@ deploy:
  stage: deploy
  image: mcr.microsoft.com/dotnet/sdk:8.0
  script:
- - dotnet tool install --global EntraTokenCli
+ - dotnet tool install --global EntraAuthCli
  - export PATH=&amp;#34;$PATH:/root/.dotnet/tools&amp;#34;
  
  # Create profile
@@ -583,7 +583,7 @@ deploy:
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="dd2a732" class="language-groovy "&gt;
+ &lt;pre id="e681468" class="language-groovy "&gt;
  &lt;code&gt;pipeline {
  agent any
  
@@ -596,7 +596,7 @@ deploy:
  stages {
  stage(&amp;#39;Setup&amp;#39;) {
  steps {
- sh &amp;#39;dotnet tool install --global EntraTokenCli&amp;#39;
+ sh &amp;#39;dotnet tool install --global EntraAuthCli&amp;#39;
  }
  }
  
@@ -980,8 +980,8 @@ entra-auth-cli get-token --profile myapp-cert&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="ce4c521" class="language-bash line-numbers"&gt;
- &lt;code&gt;dotnet tool install -g EntraTokenCli&lt;/code&gt;
+ &lt;pre id="d5cd523" class="language-bash line-numbers"&gt;
+ &lt;code&gt;dotnet tool install -g EntraAuthCli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="update"&gt;Update &lt;a href="#update" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1002,8 +1002,8 @@ entra-auth-cli get-token --profile myapp-cert&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="eba096b" class="language-bash line-numbers"&gt;
- &lt;code&gt;dotnet tool update -g EntraTokenCli&lt;/code&gt;
+ &lt;pre id="7a3cb3f" class="language-bash line-numbers"&gt;
+ &lt;code&gt;dotnet tool update -g EntraAuthCli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="uninstall"&gt;Uninstall &lt;a href="#uninstall" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1024,8 +1024,8 @@ entra-auth-cli get-token --profile myapp-cert&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="1b6cab2" class="language-bash line-numbers"&gt;
- &lt;code&gt;dotnet tool uninstall -g EntraTokenCli&lt;/code&gt;
+ &lt;pre id="76be9ab" class="language-bash line-numbers"&gt;
+ &lt;code&gt;dotnet tool uninstall -g EntraAuthCli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="verify-installation"&gt;Verify Installation &lt;a href="#verify-installation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1428,9 +1428,9 @@ entra-auth-cli create-profile --name myapp&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="078efc4" class="language-powershell line-numbers"&gt;
+ &lt;pre id="120af14" class="language-powershell line-numbers"&gt;
  &lt;code&gt;# Install using Windows Package Manager
-winget install GarrardKitchen.EntraTokenCLI&lt;/code&gt;
+winget install GarrardKitchen.EntraAuthCli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="manual-installation"&gt;Manual Installation &lt;a href="#manual-installation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1757,8 +1757,8 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/l
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="ce4c521" class="language-bash line-numbers"&gt;
- &lt;code&gt;dotnet tool install -g EntraTokenCli&lt;/code&gt;
+ &lt;pre id="d5cd523" class="language-bash line-numbers"&gt;
+ &lt;code&gt;dotnet tool install -g EntraAuthCli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;p&gt;&lt;a href="https://entra-auth-cli-docs.garrardkitchen.com/docs/getting-started/installation/"&gt;See all installation options →&lt;/a&gt;&lt;/p&gt;
