@@ -1451,10 +1451,10 @@ winget install GarrardKitchen.EntraAuthCli&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="59d75a0" class="language-powershell line-numbers"&gt;
+ &lt;pre id="98613c6" class="language-powershell line-numbers"&gt;
  &lt;code&gt;# Download latest release
 $version = &amp;#34;1.0.0&amp;#34;
-$url = &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/download/v$version/entra-auth-cli-windows-amd64.exe&amp;#34;
+$url = &amp;#34;https://github.com/garrardkitchen/entra-auth-cli/releases/download/v$version/entra-auth-cli-windows-amd64.exe&amp;#34;
 
 # Download
 Invoke-WebRequest -Uri $url -OutFile &amp;#34;$env:TEMP\entra-auth-cli.exe&amp;#34;
@@ -1586,15 +1586,15 @@ entra-auth-cli --help&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="ff33970" class="language-bash line-numbers"&gt;
+ &lt;pre id="029c0ae" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Add tap (if not already added)
 brew tap garrardkitchen/entra-auth-cli
 
 # Install
-brew install entra-auth-cli-cli
+brew install entra-auth-cli
 
 # Update
-brew upgrade entra-auth-cli-cli&lt;/code&gt;
+brew upgrade entra-auth-cli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="manual-installation"&gt;Manual Installation &lt;a href="#manual-installation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1615,10 +1615,10 @@ brew upgrade entra-auth-cli-cli&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="e522a4e" class="language-bash line-numbers"&gt;
+ &lt;pre id="5c84dda" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Download latest release
 VERSION=&amp;#34;1.0.0&amp;#34;
-curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/download/v${VERSION}/entra-auth-cli-darwin-amd64&amp;#34; \
+curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli/releases/download/v${VERSION}/entra-auth-cli-darwin-amd64&amp;#34; \
  -o /usr/local/bin/entra-auth-cli
 
 # Make executable
@@ -1646,17 +1646,17 @@ entra-auth-cli --version&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="2bed816" class="language-bash line-numbers"&gt;
+ &lt;pre id="e38784b" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Apple Silicon (M1/M2/M3)
-curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-darwin-arm64&amp;#34; \
+curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli/releases/latest/download/entra-auth-cli-darwin-arm64&amp;#34; \
  -o /usr/local/bin/entra-auth-cli
 
 # Intel (x86_64)
-curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-darwin-amd64&amp;#34; \
+curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli/releases/latest/download/entra-auth-cli-darwin-amd64&amp;#34; \
  -o /usr/local/bin/entra-auth-cli
 
 # Universal Binary (works on both)
-curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-darwin-universal&amp;#34; \
+curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli/releases/latest/download/entra-auth-cli-darwin-universal&amp;#34; \
  -o /usr/local/bin/entra-auth-cli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
@@ -1898,15 +1898,15 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/l
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="745eaa1" class="language-bash line-numbers"&gt;
+ &lt;pre id="93ff683" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Download .deb package
-wget https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli_amd64.deb
+wget https://github.com/garrardkitchen/entra-auth-cli/releases/latest/download/entra-auth-cli_amd64.deb
 
 # Install
 sudo dpkg -i entra-auth-cli_amd64.deb
 
 # Or install directly
-curl -L https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli_amd64.deb \
+curl -L https://github.com/garrardkitchen/entra-auth-cli/releases/latest/download/entra-auth-cli_amd64.deb \
  -o /tmp/entra-auth-cli.deb &amp;amp;&amp;amp; \
  sudo dpkg -i /tmp/entra-auth-cli.deb
 
@@ -1932,15 +1932,15 @@ entra-auth-cli --version&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="97c9cfb" class="language-bash line-numbers"&gt;
+ &lt;pre id="f741006" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Download .rpm package
-wget https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-1.0.0-1.x86_64.rpm
+wget https://github.com/garrardkitchen/entra-auth-cli/releases/latest/download/entra-auth-cli-1.0.0-1.x86_64.rpm
 
 # Install
 sudo rpm -ivh entra-auth-cli-1.0.0-1.x86_64.rpm
 
 # Or use dnf
-sudo dnf install https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-1.0.0-1.x86_64.rpm
+sudo dnf install https://github.com/garrardkitchen/entra-auth-cli/releases/latest/download/entra-auth-cli-1.0.0-1.x86_64.rpm
 
 # Verify
 entra-auth-cli --version&lt;/code&gt;
@@ -1964,16 +1964,16 @@ entra-auth-cli --version&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="a19ffb0" class="language-bash line-numbers"&gt;
+ &lt;pre id="2086f9f" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Using yay
-yay -S entra-auth-cli-cli
+yay -S entra-auth-cli
 
 # Using paru
-paru -S entra-auth-cli-cli
+paru -S entra-auth-cli
 
 # Manual from AUR
-git clone https://aur.archlinux.org/entra-auth-cli-cli.git
-cd entra-auth-cli-cli
+git clone https://aur.archlinux.org/entra-auth-cli.git
+cd entra-auth-cli
 makepkg -si&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
@@ -1995,9 +1995,9 @@ makepkg -si&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="d812230" class="language-bash line-numbers"&gt;
+ &lt;pre id="1fc6420" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Download binary
-curl -L https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-linux-amd64 \
+curl -L https://github.com/garrardkitchen/entra-auth-cli/releases/latest/download/entra-auth-cli-linux-amd64 \
  -o /usr/local/bin/entra-auth-cli
 
 # Make executable
@@ -2025,15 +2025,15 @@ entra-auth-cli --version&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="0616001" class="language-bash line-numbers"&gt;
+ &lt;pre id="52399ff" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Prerequisites
 sudo apt-get install golang-go # Debian/Ubuntu
 sudo dnf install golang # Fedora/RHEL
 sudo pacman -S go # Arch
 
 # Clone and build
-git clone https://github.com/garrardkitchen/entra-auth-cli-cli.git
-cd entra-auth-cli-cli
+git clone https://github.com/garrardkitchen/entra-auth-cli.git
+cd entra-auth-cli
 go build -o entra-auth-cli ./cmd/entra-auth-cli
 
 # Install
