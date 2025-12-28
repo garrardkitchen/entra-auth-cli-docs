@@ -74,15 +74,26 @@
 &lt;hr&gt;
 &lt;h2 id="basic-token-generation"&gt;Basic Token Generation &lt;a href="#basic-token-generation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="using-a-profile"&gt;Using a Profile &lt;a href="#using-a-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 
+
  
- &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool get-token -p my-profile&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ &lt;div class="prism-codeblock linenos"&gt;
+ &lt;pre id="5e323a6" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entratool get-token -p my-profile&lt;/code&gt;
+ &lt;/pre&gt;
+ &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Working with Tokens</title><link>https://entratool-docs.garrardkitchen.com/docs/user-guide/working-with-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/user-guide/working-with-tokens/</guid><description>&lt;h1 id="working-with-tokens"&gt;Working with Tokens &lt;a href="#working-with-tokens" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Once you have an access token, learn how to inspect, validate, refresh, and use it effectively with APIs.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="quick-reference"&gt;Quick Reference &lt;a href="#quick-reference" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
@@ -118,13 +129,24 @@
 &lt;hr&gt;
 &lt;h2 id="token-inspection"&gt;Token Inspection &lt;a href="#token-inspection" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="decode-jwt-claims"&gt;Decode JWT Claims &lt;a href="#decode-jwt-claims" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 
+
  
- &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool inspect -t &lt;span style="color:#e6db74"&gt;&amp;#34;eyJ0eXAiOiJKV1QiLCJh...&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ &lt;div class="prism-codeblock linenos"&gt;
+ &lt;pre id="32a0039" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entratool inspect -t &amp;#34;eyJ0eXAiOiJKV1QiLCJh...&amp;#34;&lt;/code&gt;
+ &lt;/pre&gt;
+ &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
