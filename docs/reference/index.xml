@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Command Reference on Entra Token CLI Documentation</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/</link><description>Recent content in Command Reference on Entra Token CLI Documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://entratool-docs.garrardkitchen.com/docs/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>get-token</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/get-token/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/reference/get-token/</guid><description>&lt;h1 id="get-token"&gt;get-token &lt;a href="#get-token" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Generate Microsoft Entra ID access tokens using configured authentication profiles.&lt;/p&gt;
+&lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool get-token &lt;span style="color:#f92672"&gt;[&lt;/span&gt;flags&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;get-token&lt;/code&gt; command generates access tokens for authenticating with Microsoft APIs. It supports multiple OAuth2 flows and can use profiles configured with different authentication methods.&lt;/p&gt;
+&lt;p&gt;Tokens are cached and automatically refreshed when needed, making subsequent calls fast and efficient.&lt;/p&gt;
+&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="core-options"&gt;Core Options &lt;a href="#core-options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="--profile--p"&gt;&lt;code&gt;--profile&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt; &lt;a href="#--profile--p" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Profile name to use for authentication.&lt;/p&gt;</description></item><item><title>refresh</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/refresh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/reference/refresh/</guid><description>&lt;h1 id="refresh"&gt;refresh &lt;a href="#refresh" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Refresh expired or expiring access tokens using refresh tokens.&lt;/p&gt;
+&lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool refresh &lt;span style="color:#f92672"&gt;[&lt;/span&gt;flags&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;refresh&lt;/code&gt; command obtains a new access token using a previously acquired refresh token. This is useful when you have a long-running process that needs to maintain valid tokens without user interaction.&lt;/p&gt;
+&lt;p&gt;Refresh tokens are only available when using delegated permissions (user authentication flows like interactive or device code).&lt;/p&gt;</description></item><item><title>inspect</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/inspect/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/reference/inspect/</guid><description>&lt;h1 id="inspect"&gt;inspect &lt;a href="#inspect" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Decode and inspect JWT (JSON Web Token) access tokens to view claims, expiration, and other metadata.&lt;/p&gt;
+&lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool inspect &lt;span style="color:#f92672"&gt;[&lt;/span&gt;flags&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;inspect&lt;/code&gt; command decodes JWT tokens and displays their contents in a human-readable format. This is useful for debugging authentication issues, verifying token claims, and checking expiration times.&lt;/p&gt;
+&lt;p&gt;The command can inspect:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tokens from profiles (cached tokens)&lt;/li&gt;
+&lt;li&gt;Tokens from stdin&lt;/li&gt;
+&lt;li&gt;Tokens from files&lt;/li&gt;
+&lt;li&gt;Tokens passed as arguments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="input-options"&gt;Input Options &lt;a href="#input-options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="--profile--p"&gt;&lt;code&gt;--profile&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt; &lt;a href="#--profile--p" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Inspect token from a profile.&lt;/p&gt;</description></item><item><title>discover</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/discover/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/reference/discover/</guid><description>&lt;h1 id="discover"&gt;discover &lt;a href="#discover" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Quickly validate tokens and display essential information without full decoding.&lt;/p&gt;
+&lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool discover &lt;span style="color:#f92672"&gt;[&lt;/span&gt;flags&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;discover&lt;/code&gt; command provides a fast way to validate token format and get basic information about tokens without performing full JWT decoding. It&amp;rsquo;s useful for quick checks and validation in scripts.&lt;/p&gt;
+&lt;p&gt;This command is lighter than &lt;code&gt;inspect&lt;/code&gt; and focuses on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Token format validation&lt;/li&gt;
+&lt;li&gt;Basic validity checks&lt;/li&gt;
+&lt;li&gt;Quick metadata extraction&lt;/li&gt;
+&lt;li&gt;Fast status reporting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="input-options"&gt;Input Options &lt;a href="#input-options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="--profile--p"&gt;&lt;code&gt;--profile&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt; &lt;a href="#--profile--p" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Check token from a profile.&lt;/p&gt;</description></item><item><title>config</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/reference/config/</guid><description>&lt;h1 id="config"&gt;config &lt;a href="#config" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Manage authentication profiles for storing connection settings and credentials.&lt;/p&gt;
+&lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+
+ 
+ &lt;div class="highlight"&gt;&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;entratool config &amp;lt;command&amp;gt; &lt;span style="color:#f92672"&gt;[&lt;/span&gt;flags&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;config&lt;/code&gt; command manages authentication profiles, which store tenant information, client credentials, and authentication settings. Profiles allow you to easily switch between different applications, environments, or authentication methods.&lt;/p&gt;
+&lt;p&gt;Each profile contains:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tenant ID&lt;/li&gt;
+&lt;li&gt;Client ID&lt;/li&gt;
+&lt;li&gt;Authentication method (client secret or certificate)&lt;/li&gt;
+&lt;li&gt;Default scopes&lt;/li&gt;
+&lt;li&gt;Other configuration options&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="subcommands"&gt;Subcommands &lt;a href="#subcommands" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="create"&gt;create &lt;a href="#create" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create a new authentication profile.&lt;/p&gt;</description></item></channel></rss>
