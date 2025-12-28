@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Entra Token CLI on Entra Token CLI Documentation</title><link>https://entratool-docs.garrardkitchen.com/</link><description>Recent content in Entra Token CLI on Entra Token CLI Documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://entratool-docs.garrardkitchen.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Microsoft Graph API</title><link>https://entratool-docs.garrardkitchen.com/docs/recipes/microsoft-graph/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/recipes/microsoft-graph/</guid><description>&lt;h1 id="microsoft-graph-api"&gt;Microsoft Graph API &lt;a href="#microsoft-graph-api" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to use Entra Token CLI to authenticate and interact with Microsoft Graph API.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Entra Auth CLI on Entra Auth Cli Documentation</title><link>https://entra-auth-cli-docs.garrardkitchen.com/</link><description>Recent content in Entra Auth CLI on Entra Auth Cli Documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://entra-auth-cli-docs.garrardkitchen.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Microsoft Graph API</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/microsoft-graph/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/microsoft-graph/</guid><description>&lt;h1 id="microsoft-graph-api"&gt;Microsoft Graph API &lt;a href="#microsoft-graph-api" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to use Entra Auth Cli to authenticate and interact with Microsoft Graph API.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Microsoft Graph is the unified API for Microsoft 365, providing access to:&lt;/p&gt;
 &lt;ul&gt;
@@ -28,8 +28,8 @@
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="66154cc" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool config create
+ &lt;pre id="35c905d" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli config create
 # Name: graph-readonly
 # Client ID: &amp;lt;your-app-id&amp;gt;
 # Tenant ID: &amp;lt;your-tenant-id&amp;gt;
@@ -54,14 +54,14 @@
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="9469e6f" class="language-bash line-numbers"&gt;
- &lt;code&gt;TOKEN=$(entratool get-token -p graph-readonly --silent)
+ &lt;pre id="8d9ecab" class="language-bash line-numbers"&gt;
+ &lt;code&gt;TOKEN=$(entra-auth-cli get-token -p graph-readonly --silent)
 curl -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; \
  https://graph.microsoft.com/v1.0/me | jq&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="read-user-profile"&gt;Read User Profile &lt;a href="#read-user-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Retrieve information about the authenticated user.&lt;/p&gt;</description></item><item><title>Overview</title><link>https://entratool-docs.garrardkitchen.com/docs/certificates/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/certificates/overview/</guid><description>&lt;h1 id="certificate-authentication-overview"&gt;Certificate Authentication Overview &lt;a href="#certificate-authentication-overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;X.509 certificates provide a more secure alternative to client secrets for authenticating service principals with Microsoft Entra ID.&lt;/p&gt;
+&lt;h2 id="read-user-profile"&gt;Read User Profile &lt;a href="#read-user-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Retrieve information about the authenticated user.&lt;/p&gt;</description></item><item><title>Overview</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/certificates/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/certificates/overview/</guid><description>&lt;h1 id="certificate-authentication-overview"&gt;Certificate Authentication Overview &lt;a href="#certificate-authentication-overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;X.509 certificates provide a more secure alternative to client secrets for authenticating service principals with Microsoft Entra ID.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="advantages-over-client-secrets"&gt;Advantages Over Client Secrets &lt;a href="#advantages-over-client-secrets" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
  &lt;thead&gt;
@@ -110,7 +110,7 @@ curl -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; \
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
-&lt;h2 id="when-to-use-certificates"&gt;When to Use Certificates &lt;a href="#when-to-use-certificates" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="-use-certificates-for"&gt;✅ Use Certificates For: &lt;a href="#-use-certificates-for" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Production Service Principals&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Azure Management API</title><link>https://entratool-docs.garrardkitchen.com/docs/recipes/azure-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/recipes/azure-management/</guid><description>&lt;h1 id="azure-management-api"&gt;Azure Management API &lt;a href="#azure-management-api" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to use Entra Token CLI to authenticate and manage Azure resources.&lt;/p&gt;
+&lt;h2 id="when-to-use-certificates"&gt;When to Use Certificates &lt;a href="#when-to-use-certificates" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="-use-certificates-for"&gt;✅ Use Certificates For: &lt;a href="#-use-certificates-for" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Production Service Principals&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Azure Management API</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/azure-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/azure-management/</guid><description>&lt;h1 id="azure-management-api"&gt;Azure Management API &lt;a href="#azure-management-api" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to use Entra Auth Cli to authenticate and manage Azure resources.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Azure Management API provides programmatic access to:&lt;/p&gt;
 &lt;ul&gt;
@@ -140,8 +140,8 @@ curl -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; \
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="7bfc01d" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool config create
+ &lt;pre id="4cdb216" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli config create
 # Name: azure-mgmt
 # Client ID: &amp;lt;your-app-id&amp;gt;
 # Tenant ID: &amp;lt;your-tenant-id&amp;gt;
@@ -166,14 +166,14 @@ curl -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; \
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="b6e0505" class="language-bash line-numbers"&gt;
- &lt;code&gt;TOKEN=$(entratool get-token -p azure-mgmt --silent)
+ &lt;pre id="b9d01a4" class="language-bash line-numbers"&gt;
+ &lt;code&gt;TOKEN=$(entra-auth-cli get-token -p azure-mgmt --silent)
 curl -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; \
  &amp;#39;https://management.azure.com/subscriptions?api-version=2020-01-01&amp;#39; | jq&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="list-subscriptions"&gt;List Subscriptions &lt;a href="#list-subscriptions" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Retrieve all Azure subscriptions.&lt;/p&gt;</description></item><item><title>Creating Certificates</title><link>https://entratool-docs.garrardkitchen.com/docs/certificates/creating/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/certificates/creating/</guid><description>&lt;h1 id="creating-certificates"&gt;Creating Certificates &lt;a href="#creating-certificates" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to generate X.509 certificates for authentication with Microsoft Entra ID.&lt;/p&gt;
+&lt;h2 id="list-subscriptions"&gt;List Subscriptions &lt;a href="#list-subscriptions" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Retrieve all Azure subscriptions.&lt;/p&gt;</description></item><item><title>Creating Certificates</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/certificates/creating/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/certificates/creating/</guid><description>&lt;h1 id="creating-certificates"&gt;Creating Certificates &lt;a href="#creating-certificates" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to generate X.509 certificates for authentication with Microsoft Entra ID.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="self-signed-certificates"&gt;Self-Signed Certificates &lt;a href="#self-signed-certificates" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="for-developmenttesting-only"&gt;For Development/Testing Only &lt;a href="#for-developmenttesting-only" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;⚠️ &lt;strong&gt;Warning:&lt;/strong&gt; Self-signed certificates should only be used for development and testing. Use CA-signed certificates for production.&lt;/p&gt;
 &lt;h3 id="windows-powershell"&gt;Windows (PowerShell) &lt;a href="#windows-powershell" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -309,7 +309,7 @@ openssl pkcs12 -export \
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="ca-signed-certificates"&gt;CA-Signed Certificates &lt;a href="#ca-signed-certificates" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="for-production-use"&gt;For Production Use &lt;a href="#for-production-use" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Production environments should use certificates signed by a trusted Certificate Authority.&lt;/p&gt;</description></item><item><title>CI/CD Integration</title><link>https://entratool-docs.garrardkitchen.com/docs/recipes/cicd-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/recipes/cicd-integration/</guid><description>&lt;h1 id="cicd-integration"&gt;CI/CD Integration &lt;a href="#cicd-integration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to integrate Entra Token CLI into your CI/CD pipelines for automated authentication.&lt;/p&gt;
+&lt;h2 id="ca-signed-certificates"&gt;CA-Signed Certificates &lt;a href="#ca-signed-certificates" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="for-production-use"&gt;For Production Use &lt;a href="#for-production-use" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Production environments should use certificates signed by a trusted Certificate Authority.&lt;/p&gt;</description></item><item><title>CI/CD Integration</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/cicd-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/cicd-integration/</guid><description>&lt;h1 id="cicd-integration"&gt;CI/CD Integration &lt;a href="#cicd-integration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to integrate Entra Auth Cli into your CI/CD pipelines for automated authentication.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="github-actions"&gt;GitHub Actions &lt;a href="#github-actions" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="basic-example"&gt;Basic Example &lt;a href="#basic-example" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 
@@ -326,7 +326,7 @@ openssl pkcs12 -export \
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="3396bc2" class="language-yaml "&gt;
+ &lt;pre id="12101d7" class="language-yaml "&gt;
  &lt;code&gt;name: Deploy
 
 on: [push]
@@ -337,7 +337,7 @@ jobs:
  steps:
  - uses: actions/checkout@v3
  
- - name: Install Entra Token CLI
+ - name: Install Entra Auth Cli
  run: |
  dotnet tool install --global EntraTokenCli
  
@@ -357,13 +357,13 @@ jobs:
  &amp;#34;useClientSecret&amp;#34;: true
  }
  EOF
- entratool config import -f profile.json
+ entra-auth-cli config import -f profile.json
  
  # Store secret (implementation depends on tool capabilities)
  
  - name: Deploy to Azure
  run: |
- TOKEN=$(entratool get-token -p cicd --silent)
+ TOKEN=$(entra-auth-cli get-token -p cicd --silent)
  
  # Use token for deployment
  curl -X POST \
@@ -388,7 +388,7 @@ jobs:
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="90f7a30" class="language-yaml "&gt;
+ &lt;pre id="116437c" class="language-yaml "&gt;
  &lt;code&gt;name: Multi-Environment Deploy
 
 on: [push]
@@ -402,7 +402,7 @@ jobs:
  steps:
  - uses: actions/checkout@v3
  
- - name: Setup Entra Token CLI
+ - name: Setup Entra Auth Cli
  run: dotnet tool install --global EntraTokenCli
  
  - name: Deploy to ${{ matrix.environment }}
@@ -412,11 +412,11 @@ jobs:
  CLIENT_SECRET: ${{ secrets[format(&amp;#39;{0}_CLIENT_SECRET&amp;#39;, matrix.environment)] }}
  run: |
  # Create environment-specific profile
- entratool config create --name ${{ matrix.environment }} \
+ entra-auth-cli config create --name ${{ matrix.environment }} \
  --client-id &amp;#34;$CLIENT_ID&amp;#34; \
  --tenant-id &amp;#34;$TENANT_ID&amp;#34;
  
- TOKEN=$(entratool get-token -p ${{ matrix.environment }} --silent)
+ TOKEN=$(entra-auth-cli get-token -p ${{ matrix.environment }} --silent)
  ./deploy.sh &amp;#34;$TOKEN&amp;#34; &amp;#34;${{ matrix.environment }}&amp;#34;&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
@@ -436,7 +436,7 @@ jobs:
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="e351482" class="language-yaml "&gt;
+ &lt;pre id="444f1bc" class="language-yaml "&gt;
  &lt;code&gt;trigger:
  - main
 
@@ -446,7 +446,7 @@ pool:
 steps:
 - script: |
  dotnet tool install --global EntraTokenCli
- displayName: &amp;#39;Install Entra Token CLI&amp;#39;
+ displayName: &amp;#39;Install Entra Auth Cli&amp;#39;
 
 - task: AzureCLI@2
  inputs:
@@ -455,7 +455,7 @@ steps:
  scriptLocation: &amp;#39;inlineScript&amp;#39;
  inlineScript: |
  # Create profile
- entratool config create --non-interactive \
+ entra-auth-cli config create --non-interactive \
  --name cicd \
  --client-id $(ClientId) \
  --tenant-id $(TenantId) \
@@ -463,7 +463,7 @@ steps:
  --scope &amp;#34;https://management.azure.com/.default&amp;#34;
  
  # Get token
- TOKEN=$(entratool get-token -p cicd --silent)
+ TOKEN=$(entra-auth-cli get-token -p cicd --silent)
  
  # Deploy
  ./deploy.sh &amp;#34;$TOKEN&amp;#34;&lt;/code&gt;
@@ -484,7 +484,7 @@ steps:
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="fc46442" class="language-yaml "&gt;
+ &lt;pre id="ce4f022" class="language-yaml "&gt;
  &lt;code&gt;trigger:
  - main
 
@@ -512,11 +512,11 @@ stages:
  displayName: &amp;#39;Install CLI&amp;#39;
  
  - script: |
- entratool config create --name prod \
+ entra-auth-cli config create --name prod \
  --client-id $(ClientId) \
  --tenant-id $(TenantId)
  
- TOKEN=$(entratool get-token -p prod --silent)
+ TOKEN=$(entra-auth-cli get-token -p prod --silent)
  ./deploy-to-production.sh &amp;#34;$TOKEN&amp;#34;
  displayName: &amp;#39;Deploy&amp;#39;&lt;/code&gt;
  &lt;/pre&gt;
@@ -537,7 +537,7 @@ stages:
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="0c71b40" class="language-yaml "&gt;
+ &lt;pre id="9416df5" class="language-yaml "&gt;
  &lt;code&gt;stages:
  - deploy
 
@@ -558,10 +558,10 @@ deploy:
  &amp;#34;scope&amp;#34;: &amp;#34;https://management.azure.com/.default&amp;#34;
  }
  EOF
- - entratool config import -f profile.json
+ - entra-auth-cli config import -f profile.json
  
  # Deploy
- - TOKEN=$(entratool get-token -p gitlab-ci --silent)
+ - TOKEN=$(entra-auth-cli get-token -p gitlab-ci --silent)
  - ./deploy.sh &amp;#34;$TOKEN&amp;#34;
  only:
  - main&lt;/code&gt;
@@ -583,7 +583,7 @@ deploy:
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="05ae336" class="language-groovy "&gt;
+ &lt;pre id="dd2a732" class="language-groovy "&gt;
  &lt;code&gt;pipeline {
  agent any
  
@@ -604,12 +604,12 @@ deploy:
  steps {
  sh &amp;#39;&amp;#39;&amp;#39;
  # Create profile
- entratool config create --name jenkins \
+ entra-auth-cli config create --name jenkins \
  --client-id &amp;#34;$CLIENT_ID&amp;#34; \
  --tenant-id &amp;#34;$TENANT_ID&amp;#34;
  
  # Get token
- TOKEN=$(entratool get-token -p jenkins --silent)
+ TOKEN=$(entra-auth-cli get-token -p jenkins --silent)
  
  # Deploy
  ./deploy.sh &amp;#34;$TOKEN&amp;#34;
@@ -621,7 +621,7 @@ deploy:
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="best-practices"&gt;Best Practices &lt;a href="#best-practices" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="use-service-principals"&gt;Use Service Principals &lt;a href="#use-service-principals" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create dedicated service principals for CI/CD:&lt;/p&gt;</description></item><item><title>Registering in Azure</title><link>https://entratool-docs.garrardkitchen.com/docs/certificates/registering/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/certificates/registering/</guid><description>&lt;h1 id="registering-certificates-in-azure"&gt;Registering Certificates in Azure &lt;a href="#registering-certificates-in-azure" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to upload and manage certificates in Azure app registrations.&lt;/p&gt;
+&lt;h2 id="best-practices"&gt;Best Practices &lt;a href="#best-practices" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="use-service-principals"&gt;Use Service Principals &lt;a href="#use-service-principals" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create dedicated service principals for CI/CD:&lt;/p&gt;</description></item><item><title>Registering in Azure</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/certificates/registering/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/certificates/registering/</guid><description>&lt;h1 id="registering-certificates-in-azure"&gt;Registering Certificates in Azure &lt;a href="#registering-certificates-in-azure" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to upload and manage certificates in Azure app registrations.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="prerequisites"&gt;Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Before registering a certificate:&lt;/p&gt;
 &lt;ul&gt;
@@ -637,7 +637,7 @@ deploy:
 &lt;li&gt;Select &lt;strong&gt;App registrations&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Find and select your application&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;2. Access Certificates &amp;amp; Secrets&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Bash Scripting</title><link>https://entratool-docs.garrardkitchen.com/docs/recipes/bash-scripts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/recipes/bash-scripts/</guid><description>&lt;h1 id="bash-scripting"&gt;Bash Scripting &lt;a href="#bash-scripting" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to use Entra Token CLI in Bash scripts with proper error handling, caching, and best practices.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Access Certificates &amp;amp; Secrets&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Bash Scripting</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/bash-scripts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/bash-scripts/</guid><description>&lt;h1 id="bash-scripting"&gt;Bash Scripting &lt;a href="#bash-scripting" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to use Entra Auth Cli in Bash scripts with proper error handling, caching, and best practices.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="token-caching"&gt;Token Caching &lt;a href="#token-caching" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Implement token caching to improve performance and reduce authentication requests.&lt;/p&gt;
 
@@ -658,11 +658,11 @@ deploy:
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="70b7e6f" class="language-bash line-numbers"&gt;
+ &lt;pre id="c060029" class="language-bash line-numbers"&gt;
  &lt;code&gt;#!/bin/bash
 set -euo pipefail
 
-TOKEN_CACHE=&amp;#34;/tmp/entratool-token-cache.txt&amp;#34;
+TOKEN_CACHE=&amp;#34;/tmp/entra-auth-cli-token-cache.txt&amp;#34;
 TOKEN_MAX_AGE=3000 # 50 minutes
 
 get_token() {
@@ -670,14 +670,14 @@ get_token() {
  
  # Check if cached token exists and is valid
  if [ -f &amp;#34;$TOKEN_CACHE&amp;#34; ]; then
- if entratool discover -f &amp;#34;$TOKEN_CACHE&amp;#34; &amp;amp;&amp;gt;/dev/null; then
+ if entra-auth-cli discover -f &amp;#34;$TOKEN_CACHE&amp;#34; &amp;amp;&amp;gt;/dev/null; then
  cat &amp;#34;$TOKEN_CACHE&amp;#34;
  return 0
  fi
  fi
  
  # Get fresh token
- entratool get-token -p &amp;#34;$profile&amp;#34; --silent | tee &amp;#34;$TOKEN_CACHE&amp;#34;
+ entra-auth-cli get-token -p &amp;#34;$profile&amp;#34; --silent | tee &amp;#34;$TOKEN_CACHE&amp;#34;
  chmod 600 &amp;#34;$TOKEN_CACHE&amp;#34;
 }
 
@@ -687,7 +687,7 @@ curl -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; https://api.example.com&l
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="error-handling"&gt;Error Handling &lt;a href="#error-handling" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Implement robust error handling with retries.&lt;/p&gt;</description></item><item><title>PowerShell Scripting</title><link>https://entratool-docs.garrardkitchen.com/docs/recipes/powershell-scripts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/recipes/powershell-scripts/</guid><description>&lt;h1 id="powershell-scripting"&gt;PowerShell Scripting &lt;a href="#powershell-scripting" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to integrate Entra Token CLI with PowerShell for Windows automation and Azure management.&lt;/p&gt;
+&lt;h2 id="error-handling"&gt;Error Handling &lt;a href="#error-handling" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Implement robust error handling with retries.&lt;/p&gt;</description></item><item><title>PowerShell Scripting</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/powershell-scripts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/powershell-scripts/</guid><description>&lt;h1 id="powershell-scripting"&gt;PowerShell Scripting &lt;a href="#powershell-scripting" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to integrate Entra Auth Cli with PowerShell for Windows automation and Azure management.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="basic-token-retrieval"&gt;Basic Token Retrieval &lt;a href="#basic-token-retrieval" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
 
@@ -704,9 +704,9 @@ curl -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; https://api.example.com&l
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="3ca835e" class="language-powershell "&gt;
+ &lt;pre id="70dd069" class="language-powershell "&gt;
  &lt;code&gt;# Get token
-$token = entratool get-token -p my-profile --silent
+$token = entra-auth-cli get-token -p my-profile --silent
 
 # Use with Invoke-RestMethod
 $headers = @{
@@ -723,7 +723,7 @@ $response | ConvertTo-Json&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="token-caching"&gt;Token Caching &lt;a href="#token-caching" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Implement token caching for better performance.&lt;/p&gt;</description></item><item><title>Security Hardening</title><link>https://entratool-docs.garrardkitchen.com/docs/recipes/security-hardening/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/recipes/security-hardening/</guid><description>&lt;h1 id="security-hardening"&gt;Security Hardening &lt;a href="#security-hardening" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to secure your Entra Token CLI deployments for production environments.&lt;/p&gt;
+&lt;h2 id="token-caching"&gt;Token Caching &lt;a href="#token-caching" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Implement token caching for better performance.&lt;/p&gt;</description></item><item><title>Security Hardening</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/security-hardening/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/security-hardening/</guid><description>&lt;h1 id="security-hardening"&gt;Security Hardening &lt;a href="#security-hardening" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to secure your Entra Auth Cli deployments for production environments.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="secure-token-storage"&gt;Secure Token Storage &lt;a href="#secure-token-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="use-temporary-files-with-restricted-permissions"&gt;Use Temporary Files with Restricted Permissions &lt;a href="#use-temporary-files-with-restricted-permissions" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 
@@ -743,7 +743,7 @@ $response | ConvertTo-Json&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="2704e13" class="language-bash line-numbers"&gt;
+ &lt;pre id="0e6fee8" class="language-bash line-numbers"&gt;
  &lt;code&gt;#!/bin/bash
 set -euo pipefail
 
@@ -752,7 +752,7 @@ TOKEN_FILE=$(mktemp)
 trap &amp;#34;rm -f $TOKEN_FILE&amp;#34; EXIT
 
 # Get token with restricted permissions
-entratool get-token -p my-profile --silent &amp;gt; &amp;#34;$TOKEN_FILE&amp;#34;
+entra-auth-cli get-token -p my-profile --silent &amp;gt; &amp;#34;$TOKEN_FILE&amp;#34;
 chmod 600 &amp;#34;$TOKEN_FILE&amp;#34;
 
 # Use token
@@ -791,7 +791,7 @@ logger &amp;#34;Authentication completed&amp;#34;&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="profile-separation"&gt;Profile Separation &lt;a href="#profile-separation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="environment-specific-profiles"&gt;Environment-Specific Profiles &lt;a href="#environment-specific-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create separate profiles for each environment:&lt;/p&gt;</description></item><item><title>Common Patterns</title><link>https://entratool-docs.garrardkitchen.com/docs/recipes/common-patterns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/recipes/common-patterns/</guid><description>&lt;h1 id="common-patterns"&gt;Common Patterns &lt;a href="#common-patterns" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Frequently used patterns and techniques for working with Entra Token CLI.&lt;/p&gt;
+&lt;h2 id="profile-separation"&gt;Profile Separation &lt;a href="#profile-separation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="environment-specific-profiles"&gt;Environment-Specific Profiles &lt;a href="#environment-specific-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create separate profiles for each environment:&lt;/p&gt;</description></item><item><title>Common Patterns</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/common-patterns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/common-patterns/</guid><description>&lt;h1 id="common-patterns"&gt;Common Patterns &lt;a href="#common-patterns" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Frequently used patterns and techniques for working with Entra Auth Cli.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="pattern-api-rate-limiting"&gt;Pattern: API Rate Limiting &lt;a href="#pattern-api-rate-limiting" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Handle API rate limiting with exponential backoff.&lt;/p&gt;
 
@@ -812,7 +812,7 @@ logger &amp;#34;Authentication completed&amp;#34;&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="c1f7843" class="language-bash line-numbers"&gt;
+ &lt;pre id="da60fad" class="language-bash line-numbers"&gt;
  &lt;code&gt;#!/bin/bash
 
 call_api_with_rate_limit() {
@@ -850,12 +850,12 @@ call_api_with_rate_limit() {
 }
 
 # Usage
-TOKEN=$(entratool get-token -p my-profile --silent)
+TOKEN=$(entra-auth-cli get-token -p my-profile --silent)
 call_api_with_rate_limit &amp;#34;https://graph.microsoft.com/v1.0/users&amp;#34; &amp;#34;$TOKEN&amp;#34;&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="pattern-parallel-api-calls"&gt;Pattern: Parallel API Calls &lt;a href="#pattern-parallel-api-calls" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make multiple API calls concurrently for better performance.&lt;/p&gt;</description></item><item><title>Authentication Profiles</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/profiles/</guid><description>&lt;h1 id="authentication-profiles"&gt;Authentication Profiles &lt;a href="#authentication-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Profiles are saved authentication configurations that store everything needed to generate tokens for a specific application or scenario.&lt;/p&gt;
+&lt;h2 id="pattern-parallel-api-calls"&gt;Pattern: Parallel API Calls &lt;a href="#pattern-parallel-api-calls" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make multiple API calls concurrently for better performance.&lt;/p&gt;</description></item><item><title>Authentication Profiles</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/profiles/</guid><description>&lt;h1 id="authentication-profiles"&gt;Authentication Profiles &lt;a href="#authentication-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Profiles are saved authentication configurations that store everything needed to generate tokens for a specific application or scenario.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="what-is-a-profile"&gt;What is a Profile? &lt;a href="#what-is-a-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A profile contains:&lt;/p&gt;
 &lt;ul&gt;
@@ -869,7 +869,7 @@ call_api_with_rate_limit &amp;#34;https://graph.microsoft.com/v1.0/users&amp;#34
 &lt;li&gt;&lt;strong&gt;Redirect URI&lt;/strong&gt; (optional): Custom redirect for interactive flows&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id="why-use-profiles"&gt;Why Use Profiles? &lt;a href="#why-use-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="convenience"&gt;Convenience &lt;a href="#convenience" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Store configuration once, reuse many times. No need to type tenant IDs and secrets repeatedly.&lt;/p&gt;</description></item><item><title>Client Credentials Flow</title><link>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/</guid><description>&lt;h1 id="client-credentials-flow"&gt;Client Credentials Flow &lt;a href="#client-credentials-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Client Credentials flow is designed for service-to-service authentication where no user interaction is required. This is the most common flow for automation, CI/CD pipelines, and background services.&lt;/p&gt;
+&lt;h2 id="why-use-profiles"&gt;Why Use Profiles? &lt;a href="#why-use-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="convenience"&gt;Convenience &lt;a href="#convenience" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Store configuration once, reuse many times. No need to type tenant IDs and secrets repeatedly.&lt;/p&gt;</description></item><item><title>Client Credentials Flow</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/</guid><description>&lt;h1 id="client-credentials-flow"&gt;Client Credentials Flow &lt;a href="#client-credentials-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Client Credentials flow is designed for service-to-service authentication where no user interaction is required. This is the most common flow for automation, CI/CD pipelines, and background services.&lt;/p&gt;
 &lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Use this flow when:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Your application runs without user interaction&lt;/li&gt;
@@ -900,12 +900,12 @@ call_api_with_rate_limit &amp;#34;https://graph.microsoft.com/v1.0/users&amp;#34
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="ae3925e" class="language-bash line-numbers"&gt;
+ &lt;pre id="c6880d2" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Create profile with client secret
-entratool create-profile
+entra-auth-cli create-profile
 
 # Generate token
-entratool get-token --profile myapp&lt;/code&gt;
+entra-auth-cli get-token --profile myapp&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="using-certificate"&gt;Using Certificate &lt;a href="#using-certificate" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -926,15 +926,15 @@ entratool get-token --profile myapp&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="06648d5" class="language-bash line-numbers"&gt;
+ &lt;pre id="8575bdd" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Create profile with certificate
-entratool create-profile --use-certificate
+entra-auth-cli create-profile --use-certificate
 
 # Generate token
-entratool get-token --profile myapp-cert&lt;/code&gt;
+entra-auth-cli get-token --profile myapp-cert&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;h2 id="configuration"&gt;Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="profile-setup"&gt;Profile Setup &lt;a href="#profile-setup" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When creating a profile for client credentials flow:&lt;/p&gt;</description></item><item><title>get-token</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/get-token/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/reference/get-token/</guid><description>&lt;h1 id="get-token"&gt;get-token &lt;a href="#get-token" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Generate Microsoft Entra ID access tokens using configured authentication profiles.&lt;/p&gt;
+&lt;h2 id="configuration"&gt;Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="profile-setup"&gt;Profile Setup &lt;a href="#profile-setup" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When creating a profile for client credentials flow:&lt;/p&gt;</description></item><item><title>get-token</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/get-token/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/get-token/</guid><description>&lt;h1 id="get-token"&gt;get-token &lt;a href="#get-token" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Generate Microsoft Entra ID access tokens using configured authentication profiles.&lt;/p&gt;
 &lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
 
 
@@ -953,13 +953,13 @@ entratool get-token --profile myapp-cert&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="e51c5fe" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool get-token [flags]&lt;/code&gt;
+ &lt;pre id="9970ea1" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli get-token [flags]&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;get-token&lt;/code&gt; command generates access tokens for authenticating with Microsoft APIs. It supports multiple OAuth2 flows and can use profiles configured with different authentication methods.&lt;/p&gt;
 &lt;p&gt;Tokens are cached and automatically refreshed when needed, making subsequent calls fast and efficient.&lt;/p&gt;
-&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="core-options"&gt;Core Options &lt;a href="#core-options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="--profile--p"&gt;&lt;code&gt;--profile&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt; &lt;a href="#--profile--p" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Profile name to use for authentication.&lt;/p&gt;</description></item><item><title>Installation</title><link>https://entratool-docs.garrardkitchen.com/docs/getting-started/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/getting-started/installation/</guid><description>&lt;h1 id="installation"&gt;Installation &lt;a href="#installation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Entra Token CLI can be installed as a .NET global tool or downloaded as a self-contained executable for your platform.&lt;/p&gt;
+&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="core-options"&gt;Core Options &lt;a href="#core-options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="--profile--p"&gt;&lt;code&gt;--profile&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt; &lt;a href="#--profile--p" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Profile name to use for authentication.&lt;/p&gt;</description></item><item><title>Installation</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/getting-started/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/getting-started/installation/</guid><description>&lt;h1 id="installation"&gt;Installation &lt;a href="#installation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Entra Auth Cli can be installed as a .NET global tool or downloaded as a self-contained executable for your platform.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="option-1-net-global-tool-recommended"&gt;Option 1: .NET Global Tool (Recommended) &lt;a href="#option-1-net-global-tool-recommended" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: .NET Runtime 10.0 or later&lt;/p&gt;
 &lt;h3 id="install"&gt;Install &lt;a href="#install" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1046,12 +1046,12 @@ entratool get-token --profile myapp-cert&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="3f1fc2e" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool --version&lt;/code&gt;
+ &lt;pre id="7a4f84f" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli --version&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="option-2-self-contained-executables"&gt;Option 2: Self-Contained Executables &lt;a href="#option-2-self-contained-executables" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Download the latest release for your platform from the &lt;a href="https://github.com/garrardkitchen/entra-token-cli/releases" rel="external" target="_blank"&gt;Releases page&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/&gt;&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Managing Profiles</title><link>https://entratool-docs.garrardkitchen.com/docs/user-guide/managing-profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/user-guide/managing-profiles/</guid><description>&lt;h1 id="managing-profiles"&gt;Managing Profiles &lt;a href="#managing-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Authentication profiles store your configuration for connecting to Microsoft Entra ID. Learn how to create, view, edit, and delete profiles.&lt;/p&gt;
+&lt;h2 id="option-2-self-contained-executables"&gt;Option 2: Self-Contained Executables &lt;a href="#option-2-self-contained-executables" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Download the latest release for your platform from the &lt;a href="https://github.com/garrardkitchen/entra-token-cli/releases" rel="external" target="_blank"&gt;Releases page&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/&gt;&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Managing Profiles</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/managing-profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/managing-profiles/</guid><description>&lt;h1 id="managing-profiles"&gt;Managing Profiles &lt;a href="#managing-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Authentication profiles store your configuration for connecting to Microsoft Entra ID. Learn how to create, view, edit, and delete profiles.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="quick-reference"&gt;Quick Reference &lt;a href="#quick-reference" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
  &lt;thead&gt;
@@ -1063,32 +1063,32 @@ entratool get-token --profile myapp-cert&lt;/code&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td&gt;Create new profile&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool config create&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli config create&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;List all profiles&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool config list&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli config list&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Edit existing profile&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool config edit -p NAME&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli config edit -p NAME&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Delete profile&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool config delete -p NAME&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli config delete -p NAME&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Export profile&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool config export -p NAME&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli config export -p NAME&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Import profile&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool config import -f FILE&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli config import -f FILE&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
-&lt;h2 id="creating-profiles"&gt;Creating Profiles &lt;a href="#creating-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="interactive-creation"&gt;Interactive Creation &lt;a href="#interactive-creation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The easiest way to create a profile:&lt;/p&gt;</description></item><item><title>Profile Issues</title><link>https://entratool-docs.garrardkitchen.com/docs/troubleshooting/profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/troubleshooting/profiles/</guid><description>&lt;h1 id="profile-issues"&gt;Profile Issues &lt;a href="#profile-issues" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Common problems with profile configuration, access, and management.&lt;/p&gt;
+&lt;h2 id="creating-profiles"&gt;Creating Profiles &lt;a href="#creating-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="interactive-creation"&gt;Interactive Creation &lt;a href="#interactive-creation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The easiest way to create a profile:&lt;/p&gt;</description></item><item><title>Profile Issues</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/troubleshooting/profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/troubleshooting/profiles/</guid><description>&lt;h1 id="profile-issues"&gt;Profile Issues &lt;a href="#profile-issues" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Common problems with profile configuration, access, and management.&lt;/p&gt;
 &lt;h2 id="profile-not-found"&gt;Profile Not Found &lt;a href="#profile-not-found" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="problem"&gt;Problem &lt;a href="#problem" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
 
 
@@ -1107,8 +1107,8 @@ entratool get-token --profile myapp-cert&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="0fdf143" class="language-bash line-numbers"&gt;
- &lt;code&gt;$ entratool get-token --profile production
+ &lt;pre id="30c9971" class="language-bash line-numbers"&gt;
+ &lt;code&gt;$ entra-auth-cli get-token --profile production
 Error: profile &amp;#39;production&amp;#39; not found&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
@@ -1130,12 +1130,12 @@ Error: profile &amp;#39;production&amp;#39; not found&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="d070ada" class="language-bash line-numbers"&gt;
+ &lt;pre id="016a8be" class="language-bash line-numbers"&gt;
  &lt;code&gt;# See all configured profiles
-entratool list-profiles
+entra-auth-cli list-profiles
 
 # Check if profile exists with different name
-entratool list-profiles | grep -i prod&lt;/code&gt;
+entra-auth-cli list-profiles | grep -i prod&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h4 id="2-create-missing-profile"&gt;2. Create Missing Profile &lt;a href="#2-create-missing-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
@@ -1156,12 +1156,12 @@ entratool list-profiles | grep -i prod&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="b37a88a" class="language-bash line-numbers"&gt;
+ &lt;pre id="ee98472" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Create the profile
-entratool create-profile --name production
+entra-auth-cli create-profile --name production
 
 # Or use interactive mode
-entratool create-profile&lt;/code&gt;
+entra-auth-cli create-profile&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h4 id="3-use-default-profile"&gt;3. Use Default Profile &lt;a href="#3-use-default-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
@@ -1182,12 +1182,12 @@ entratool create-profile&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="412fa78" class="language-bash line-numbers"&gt;
+ &lt;pre id="30aefb1" class="language-bash line-numbers"&gt;
  &lt;code&gt;# If you meant to use default profile
-entratool get-token
+entra-auth-cli get-token
 
 # Check default profile
-entratool list-profiles | grep default&lt;/code&gt;
+entra-auth-cli list-profiles | grep default&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h2 id="profile-already-exists"&gt;Profile Already Exists &lt;a href="#profile-already-exists" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="problem-1"&gt;Problem &lt;a href="#problem-1" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1208,8 +1208,8 @@ entratool list-profiles | grep default&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="ee97faf" class="language-bash line-numbers"&gt;
- &lt;code&gt;$ entratool create-profile --name dev
+ &lt;pre id="c7166d9" class="language-bash line-numbers"&gt;
+ &lt;code&gt;$ entra-auth-cli create-profile --name dev
 Error: profile &amp;#39;dev&amp;#39; already exists&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
@@ -1231,12 +1231,12 @@ Error: profile &amp;#39;dev&amp;#39; already exists&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="b30b933" class="language-bash line-numbers"&gt;
+ &lt;pre id="114bfdd" class="language-bash line-numbers"&gt;
  &lt;code&gt;# View existing profile
-entratool show-profile --name dev
+entra-auth-cli show-profile --name dev
 
 # Edit if needed
-entratool edit-profile --name dev&lt;/code&gt;
+entra-auth-cli edit-profile --name dev&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h4 id="2-delete-and-recreate"&gt;2. Delete and Recreate &lt;a href="#2-delete-and-recreate" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
@@ -1257,12 +1257,12 @@ entratool edit-profile --name dev&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="1855a42" class="language-bash line-numbers"&gt;
+ &lt;pre id="0dee214" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Delete existing profile
-entratool delete-profile --name dev
+entra-auth-cli delete-profile --name dev
 
 # Create new one
-entratool create-profile --name dev&lt;/code&gt;
+entra-auth-cli create-profile --name dev&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h4 id="3-use-different-name"&gt;3. Use Different Name &lt;a href="#3-use-different-name" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
@@ -1283,10 +1283,10 @@ entratool create-profile --name dev&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="5d655aa" class="language-bash line-numbers"&gt;
+ &lt;pre id="61515ec" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Create with different name
-entratool create-profile --name dev-new
-entratool create-profile --name dev-v2&lt;/code&gt;
+entra-auth-cli create-profile --name dev-new
+entra-auth-cli create-profile --name dev-v2&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h2 id="invalid-profile-configuration"&gt;Invalid Profile Configuration &lt;a href="#invalid-profile-configuration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="problem-2"&gt;Problem &lt;a href="#problem-2" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1307,8 +1307,8 @@ entratool create-profile --name dev-v2&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="949a23e" class="language-bash line-numbers"&gt;
- &lt;code&gt;$ entratool get-token --profile myapp
+ &lt;pre id="0bca110" class="language-bash line-numbers"&gt;
+ &lt;code&gt;$ entra-auth-cli get-token --profile myapp
 Error: invalid profile configuration: missing tenant_id&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
@@ -1330,9 +1330,9 @@ Error: invalid profile configuration: missing tenant_id&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="f65bb36" class="language-bash line-numbers"&gt;
+ &lt;pre id="43f54d9" class="language-bash line-numbers"&gt;
  &lt;code&gt;# View profile details
-entratool show-profile --name myapp
+entra-auth-cli show-profile --name myapp
 
 # Look for missing fields:
 # - tenant_id
@@ -1358,13 +1358,13 @@ entratool show-profile --name myapp
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="a3bb8fa" class="language-bash line-numbers"&gt;
+ &lt;pre id="5eae6e6" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Interactive edit
-entratool edit-profile --name myapp
+entra-auth-cli edit-profile --name myapp
 
 # Or delete and recreate
-entratool delete-profile --name myapp
-entratool create-profile --name myapp&lt;/code&gt;
+entra-auth-cli delete-profile --name myapp
+entra-auth-cli create-profile --name myapp&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h4 id="3-validate-required-fields"&gt;3. Validate Required Fields &lt;a href="#3-validate-required-fields" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
@@ -1402,8 +1402,8 @@ entratool create-profile --name myapp&lt;/code&gt;
 }&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;h2 id="cannot-access-secure-storage"&gt;Cannot Access Secure Storage &lt;a href="#cannot-access-secure-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="problem-3"&gt;Problem &lt;a href="#problem-3" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Windows:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Windows</title><link>https://entratool-docs.garrardkitchen.com/docs/platform-guides/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/platform-guides/windows/</guid><description>&lt;h1 id="windows-platform-guide"&gt;Windows Platform Guide &lt;a href="#windows-platform-guide" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Complete guide for using Entra Token CLI on Windows, including DPAPI-based secure storage, PowerShell integration, and Windows-specific features.&lt;/p&gt;
-&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Entra Token CLI leverages Windows security features for optimal token protection:&lt;/p&gt;
+&lt;h2 id="cannot-access-secure-storage"&gt;Cannot Access Secure Storage &lt;a href="#cannot-access-secure-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="problem-3"&gt;Problem &lt;a href="#problem-3" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Windows:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Windows</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/platform-guides/windows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/platform-guides/windows/</guid><description>&lt;h1 id="windows-platform-guide"&gt;Windows Platform Guide &lt;a href="#windows-platform-guide" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Complete guide for using Entra Auth Cli on Windows, including DPAPI-based secure storage, PowerShell integration, and Windows-specific features.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Entra Auth Cli leverages Windows security features for optimal token protection:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;DPAPI Encryption&lt;/strong&gt;: Windows Data Protection API for secure token storage&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Per-User Isolation&lt;/strong&gt;: Tokens encrypted per-user, per-machine&lt;/li&gt;
@@ -1451,16 +1451,16 @@ winget install GarrardKitchen.EntraTokenCLI&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="23a1ca8" class="language-powershell line-numbers"&gt;
+ &lt;pre id="59d75a0" class="language-powershell line-numbers"&gt;
  &lt;code&gt;# Download latest release
 $version = &amp;#34;1.0.0&amp;#34;
-$url = &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/download/v$version/entratool-windows-amd64.exe&amp;#34;
+$url = &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/download/v$version/entra-auth-cli-windows-amd64.exe&amp;#34;
 
 # Download
-Invoke-WebRequest -Uri $url -OutFile &amp;#34;$env:TEMP\entratool.exe&amp;#34;
+Invoke-WebRequest -Uri $url -OutFile &amp;#34;$env:TEMP\entra-auth-cli.exe&amp;#34;
 
 # Move to Program Files
-Move-Item &amp;#34;$env:TEMP\entratool.exe&amp;#34; &amp;#34;C:\Program Files\EntraToken\entratool.exe&amp;#34; -Force
+Move-Item &amp;#34;$env:TEMP\entra-auth-cli.exe&amp;#34; &amp;#34;C:\Program Files\EntraToken\entra-auth-cli.exe&amp;#34; -Force
 
 # Add to PATH
 $path = [Environment]::GetEnvironmentVariable(&amp;#34;Path&amp;#34;, &amp;#34;User&amp;#34;)
@@ -1485,15 +1485,15 @@ $path = [Environment]::GetEnvironmentVariable(&amp;#34;Path&amp;#34;, &amp;#34;U
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="b26aadd" class="language-powershell line-numbers"&gt;
+ &lt;pre id="9751c30" class="language-powershell line-numbers"&gt;
  &lt;code&gt;# Check version
-entratool --version
+entra-auth-cli --version
 
 # Test basic functionality
-entratool --help&lt;/code&gt;
+entra-auth-cli --help&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;h2 id="token-storage"&gt;Token Storage &lt;a href="#token-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="dpapi-encryption"&gt;DPAPI Encryption &lt;a href="#dpapi-encryption" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Tokens are encrypted using Windows DPAPI:&lt;/p&gt;</description></item><item><title>Authorization Code Flow</title><link>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/authorization-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/authorization-code/</guid><description>&lt;h1 id="authorization-code-flow"&gt;Authorization Code Flow &lt;a href="#authorization-code-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Authorization Code flow provides secure user authentication by redirecting to a web browser for sign-in, then exchanging an authorization code for tokens. This flow is used for applications that can securely store client secrets.&lt;/p&gt;
+&lt;h2 id="token-storage"&gt;Token Storage &lt;a href="#token-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="dpapi-encryption"&gt;DPAPI Encryption &lt;a href="#dpapi-encryption" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Tokens are encrypted using Windows DPAPI:&lt;/p&gt;</description></item><item><title>Authorization Code Flow</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/authorization-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/authorization-code/</guid><description>&lt;h1 id="authorization-code-flow"&gt;Authorization Code Flow &lt;a href="#authorization-code-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Authorization Code flow provides secure user authentication by redirecting to a web browser for sign-in, then exchanging an authorization code for tokens. This flow is used for applications that can securely store client secrets.&lt;/p&gt;
 &lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Use this flow when:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Your application needs user authentication&lt;/li&gt;
@@ -1501,7 +1501,7 @@ entratool --help&lt;/code&gt;
 &lt;li&gt;You can securely store client secrets&lt;/li&gt;
 &lt;li&gt;You want the most secure user authentication flow&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Key characteristics:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Generating Tokens</title><link>https://entratool-docs.garrardkitchen.com/docs/user-guide/generating-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/user-guide/generating-tokens/</guid><description>&lt;h1 id="generating-tokens"&gt;Generating Tokens &lt;a href="#generating-tokens" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to generate access tokens using different OAuth2 flows and configurations.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key characteristics:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Generating Tokens</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/generating-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/generating-tokens/</guid><description>&lt;h1 id="generating-tokens"&gt;Generating Tokens &lt;a href="#generating-tokens" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to generate access tokens using different OAuth2 flows and configurations.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="quick-reference"&gt;Quick Reference &lt;a href="#quick-reference" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
  &lt;thead&gt;
@@ -1513,27 +1513,27 @@ entratool --help&lt;/code&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td&gt;Get token with profile&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool get-token -p PROFILE&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli get-token -p PROFILE&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Override scope&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool get-token -p PROFILE --scope &amp;quot;SCOPE&amp;quot;&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli get-token -p PROFILE --scope &amp;quot;SCOPE&amp;quot;&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Specify flow&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool get-token -p PROFILE -f FLOW&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli get-token -p PROFILE -f FLOW&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Silent mode&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool get-token -p PROFILE --silent&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli get-token -p PROFILE --silent&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Save to file&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool get-token -p PROFILE -o token.txt&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli get-token -p PROFILE -o token.txt&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Refresh token&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool refresh -p PROFILE&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli refresh -p PROFILE&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1556,12 +1556,12 @@ entratool --help&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="5e323a6" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool get-token -p my-profile&lt;/code&gt;
+ &lt;pre id="97d05ab" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli get-token -p my-profile&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>macOS</title><link>https://entratool-docs.garrardkitchen.com/docs/platform-guides/macos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/platform-guides/macos/</guid><description>&lt;h1 id="macos-platform-guide"&gt;macOS Platform Guide &lt;a href="#macos-platform-guide" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Complete guide for using Entra Token CLI on macOS, including Keychain integration, Homebrew installation, and macOS-specific features.&lt;/p&gt;
-&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Entra Token CLI integrates seamlessly with macOS security features:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>macOS</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/platform-guides/macos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/platform-guides/macos/</guid><description>&lt;h1 id="macos-platform-guide"&gt;macOS Platform Guide &lt;a href="#macos-platform-guide" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Complete guide for using Entra Auth Cli on macOS, including Keychain integration, Homebrew installation, and macOS-specific features.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Entra Auth Cli integrates seamlessly with macOS security features:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Keychain Integration&lt;/strong&gt;: Secure token storage in macOS Keychain&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Native Security&lt;/strong&gt;: Leverages macOS security framework&lt;/li&gt;
@@ -1586,15 +1586,15 @@ entratool --help&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="1bf6ac9" class="language-bash line-numbers"&gt;
+ &lt;pre id="ff33970" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Add tap (if not already added)
-brew tap garrardkitchen/entratool
+brew tap garrardkitchen/entra-auth-cli
 
 # Install
-brew install entratool-cli
+brew install entra-auth-cli-cli
 
 # Update
-brew upgrade entratool-cli&lt;/code&gt;
+brew upgrade entra-auth-cli-cli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="manual-installation"&gt;Manual Installation &lt;a href="#manual-installation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1615,17 +1615,17 @@ brew upgrade entratool-cli&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="be1e5d7" class="language-bash line-numbers"&gt;
+ &lt;pre id="e522a4e" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Download latest release
 VERSION=&amp;#34;1.0.0&amp;#34;
-curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/download/v${VERSION}/entratool-darwin-amd64&amp;#34; \
- -o /usr/local/bin/entratool
+curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/download/v${VERSION}/entra-auth-cli-darwin-amd64&amp;#34; \
+ -o /usr/local/bin/entra-auth-cli
 
 # Make executable
-chmod &amp;#43;x /usr/local/bin/entratool
+chmod &amp;#43;x /usr/local/bin/entra-auth-cli
 
 # Verify installation
-entratool --version&lt;/code&gt;
+entra-auth-cli --version&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="intel-vs-apple-silicon"&gt;Intel vs Apple Silicon &lt;a href="#intel-vs-apple-silicon" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1646,21 +1646,21 @@ entratool --version&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="c72c33b" class="language-bash line-numbers"&gt;
+ &lt;pre id="2bed816" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Apple Silicon (M1/M2/M3)
-curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest/download/entratool-darwin-arm64&amp;#34; \
- -o /usr/local/bin/entratool
+curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-darwin-arm64&amp;#34; \
+ -o /usr/local/bin/entra-auth-cli
 
 # Intel (x86_64)
-curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest/download/entratool-darwin-amd64&amp;#34; \
- -o /usr/local/bin/entratool
+curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-darwin-amd64&amp;#34; \
+ -o /usr/local/bin/entra-auth-cli
 
 # Universal Binary (works on both)
-curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest/download/entratool-darwin-universal&amp;#34; \
- -o /usr/local/bin/entratool&lt;/code&gt;
+curl -L &amp;#34;https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-darwin-universal&amp;#34; \
+ -o /usr/local/bin/entra-auth-cli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;h2 id="token-storage"&gt;Token Storage &lt;a href="#token-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="macos-keychain"&gt;macOS Keychain &lt;a href="#macos-keychain" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Tokens are securely stored in macOS Keychain:&lt;/p&gt;</description></item><item><title>OAuth2 Flows</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/oauth2-flows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/oauth2-flows/</guid><description>&lt;h1 id="oauth2-flows"&gt;OAuth2 Flows &lt;a href="#oauth2-flows" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Entra Token CLI supports four OAuth2 authentication flows. Each flow is designed for specific scenarios and security requirements.&lt;/p&gt;
+&lt;h2 id="token-storage"&gt;Token Storage &lt;a href="#token-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="macos-keychain"&gt;macOS Keychain &lt;a href="#macos-keychain" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Tokens are securely stored in macOS Keychain:&lt;/p&gt;</description></item><item><title>OAuth2 Flows</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/oauth2-flows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/oauth2-flows/</guid><description>&lt;h1 id="oauth2-flows"&gt;OAuth2 Flows &lt;a href="#oauth2-flows" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Entra Auth Cli supports four OAuth2 authentication flows. Each flow is designed for specific scenarios and security requirements.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="flow-overview"&gt;Flow Overview &lt;a href="#flow-overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
  &lt;thead&gt;
@@ -1733,11 +1733,11 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="42a3adb" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool get-token -p service-principal -f ClientCredentials&lt;/code&gt;
+ &lt;pre id="e2f685f" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli get-token -p service-principal -f ClientCredentials&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/"&gt;Full guide →&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Quick Start</title><link>https://entratool-docs.garrardkitchen.com/docs/getting-started/quickstart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/getting-started/quickstart/</guid><description>&lt;h1 id="quick-start"&gt;Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Generate your first Entra ID access token in just a few minutes!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/"&gt;Full guide →&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Quick Start</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/getting-started/quickstart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/getting-started/quickstart/</guid><description>&lt;h1 id="quick-start"&gt;Quick Start &lt;a href="#quick-start" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Generate your first Entra ID access token in just a few minutes!&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="step-1-install-the-tool"&gt;Step 1: Install the Tool &lt;a href="#step-1-install-the-tool" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
 
@@ -1761,7 +1761,7 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest
  &lt;code&gt;dotnet tool install -g EntraTokenCli&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;p&gt;&lt;a href="https://entratool-docs.garrardkitchen.com/docs/getting-started/installation/"&gt;See all installation options →&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://entra-auth-cli-docs.garrardkitchen.com/docs/getting-started/installation/"&gt;See all installation options →&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="step-2-create-your-first-profile"&gt;Step 2: Create Your First Profile &lt;a href="#step-2-create-your-first-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Run the interactive profile creation:&lt;/p&gt;
 
@@ -1782,8 +1782,8 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="378fef3" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool config create&lt;/code&gt;
+ &lt;pre id="4dcd54e" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli config create&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;p&gt;You&amp;rsquo;ll be prompted for:&lt;/p&gt;
@@ -1795,7 +1795,7 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest
 &lt;li&gt;&lt;strong&gt;Auth method&lt;/strong&gt;: Choose &lt;code&gt;ClientSecret&lt;/code&gt; for this quick start&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Client secret&lt;/strong&gt;: Your app&amp;rsquo;s client secret (securely stored)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>refresh</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/refresh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/reference/refresh/</guid><description>&lt;h1 id="refresh"&gt;refresh &lt;a href="#refresh" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Refresh expired or expiring access tokens using refresh tokens.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>refresh</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/refresh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/refresh/</guid><description>&lt;h1 id="refresh"&gt;refresh &lt;a href="#refresh" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Refresh expired or expiring access tokens using refresh tokens.&lt;/p&gt;
 &lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
 
 
@@ -1814,12 +1814,12 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="15b2857" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool refresh [flags]&lt;/code&gt;
+ &lt;pre id="123613e" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli refresh [flags]&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;refresh&lt;/code&gt; command obtains a new access token using a previously acquired refresh token. This is useful when you have a long-running process that needs to maintain valid tokens without user interaction.&lt;/p&gt;
-&lt;p&gt;Refresh tokens are only available when using delegated permissions (user authentication flows like interactive or device code).&lt;/p&gt;</description></item><item><title>Device Code Flow</title><link>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/device-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/device-code/</guid><description>&lt;h1 id="device-code-flow"&gt;Device Code Flow &lt;a href="#device-code-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Device Code flow enables authentication on devices that lack a web browser or have limited input capabilities. Users sign in on a separate device (like their phone or computer) while the original device polls for authentication completion.&lt;/p&gt;
+&lt;p&gt;Refresh tokens are only available when using delegated permissions (user authentication flows like interactive or device code).&lt;/p&gt;</description></item><item><title>Device Code Flow</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/device-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/device-code/</guid><description>&lt;h1 id="device-code-flow"&gt;Device Code Flow &lt;a href="#device-code-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Device Code flow enables authentication on devices that lack a web browser or have limited input capabilities. Users sign in on a separate device (like their phone or computer) while the original device polls for authentication completion.&lt;/p&gt;
 &lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Use this flow when:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Device doesn&amp;rsquo;t have a web browser&lt;/li&gt;
@@ -1827,11 +1827,11 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest
 &lt;li&gt;Working in SSH/remote terminal sessions&lt;/li&gt;
 &lt;li&gt;Browser-based authentication isn&amp;rsquo;t practical&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;How it works:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>First Token Tutorial</title><link>https://entratool-docs.garrardkitchen.com/docs/getting-started/first-token/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/getting-started/first-token/</guid><description>&lt;h1 id="your-first-token---complete-tutorial"&gt;Your First Token - Complete Tutorial &lt;a href="#your-first-token---complete-tutorial" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;This tutorial walks you through the complete process from setting up an app registration in Azure to generating your first token.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How it works:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>First Token Tutorial</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/getting-started/first-token/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/getting-started/first-token/</guid><description>&lt;h1 id="your-first-token---complete-tutorial"&gt;Your First Token - Complete Tutorial &lt;a href="#your-first-token---complete-tutorial" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;This tutorial walks you through the complete process from setting up an app registration in Azure to generating your first token.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="prerequisites"&gt;Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Azure subscription with access to create app registrations&lt;/li&gt;
-&lt;li&gt;Entra Token CLI installed (&lt;a href="https://entratool-docs.garrardkitchen.com/docs/getting-started/installation/"&gt;Installation Guide&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Entra Auth Cli installed (&lt;a href="https://entra-auth-cli-docs.garrardkitchen.com/docs/getting-started/installation/"&gt;Installation Guide&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;Basic understanding of Azure and authentication concepts&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
@@ -1841,7 +1841,7 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest
 &lt;li&gt;Select &lt;strong&gt;App registrations&lt;/strong&gt; from the left menu&lt;/li&gt;
 &lt;li&gt;Click &lt;strong&gt;New registration&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="12-register-your-application"&gt;1.2 Register Your Application &lt;a href="#12-register-your-application" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Fill in the registration form:&lt;/p&gt;</description></item><item><title>inspect</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/inspect/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/reference/inspect/</guid><description>&lt;h1 id="inspect"&gt;inspect &lt;a href="#inspect" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Decode and inspect JWT (JSON Web Token) access tokens to view claims, expiration, and other metadata.&lt;/p&gt;
+&lt;h3 id="12-register-your-application"&gt;1.2 Register Your Application &lt;a href="#12-register-your-application" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Fill in the registration form:&lt;/p&gt;</description></item><item><title>inspect</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/inspect/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/inspect/</guid><description>&lt;h1 id="inspect"&gt;inspect &lt;a href="#inspect" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Decode and inspect JWT (JSON Web Token) access tokens to view claims, expiration, and other metadata.&lt;/p&gt;
 &lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
 
 
@@ -1860,8 +1860,8 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="d839e80" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool inspect [flags]&lt;/code&gt;
+ &lt;pre id="48151fa" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli inspect [flags]&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;inspect&lt;/code&gt; command decodes JWT tokens and displays their contents in a human-readable format. This is useful for debugging authentication issues, verifying token claims, and checking expiration times.&lt;/p&gt;
@@ -1872,8 +1872,8 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest
 &lt;li&gt;Tokens from files&lt;/li&gt;
 &lt;li&gt;Tokens passed as arguments&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="input-options"&gt;Input Options &lt;a href="#input-options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="--profile--p"&gt;&lt;code&gt;--profile&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt; &lt;a href="#--profile--p" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Inspect token from a profile.&lt;/p&gt;</description></item><item><title>Linux</title><link>https://entratool-docs.garrardkitchen.com/docs/platform-guides/linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/platform-guides/linux/</guid><description>&lt;h1 id="linux-platform-guide"&gt;Linux Platform Guide &lt;a href="#linux-platform-guide" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Complete guide for using Entra Token CLI on Linux, including secure token storage, distribution-specific installation, and Linux-specific features.&lt;/p&gt;
-&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Entra Token CLI provides secure token storage and management on Linux:&lt;/p&gt;
+&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="input-options"&gt;Input Options &lt;a href="#input-options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="--profile--p"&gt;&lt;code&gt;--profile&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt; &lt;a href="#--profile--p" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Inspect token from a profile.&lt;/p&gt;</description></item><item><title>Linux</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/platform-guides/linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/platform-guides/linux/</guid><description>&lt;h1 id="linux-platform-guide"&gt;Linux Platform Guide &lt;a href="#linux-platform-guide" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Complete guide for using Entra Auth Cli on Linux, including secure token storage, distribution-specific installation, and Linux-specific features.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Entra Auth Cli provides secure token storage and management on Linux:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Encrypted Storage&lt;/strong&gt;: XOR-based encryption with user-specific keys&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Distribution Support&lt;/strong&gt;: Works on Ubuntu, Debian, RHEL, Fedora, Arch, and more&lt;/li&gt;
@@ -1898,20 +1898,20 @@ curl -L &amp;#34;https://github.com/garrardkitchen/entratool-cli/releases/latest
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="3526a45" class="language-bash line-numbers"&gt;
+ &lt;pre id="745eaa1" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Download .deb package
-wget https://github.com/garrardkitchen/entratool-cli/releases/latest/download/entratool_amd64.deb
+wget https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli_amd64.deb
 
 # Install
-sudo dpkg -i entratool_amd64.deb
+sudo dpkg -i entra-auth-cli_amd64.deb
 
 # Or install directly
-curl -L https://github.com/garrardkitchen/entratool-cli/releases/latest/download/entratool_amd64.deb \
- -o /tmp/entratool.deb &amp;amp;&amp;amp; \
- sudo dpkg -i /tmp/entratool.deb
+curl -L https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli_amd64.deb \
+ -o /tmp/entra-auth-cli.deb &amp;amp;&amp;amp; \
+ sudo dpkg -i /tmp/entra-auth-cli.deb
 
 # Verify
-entratool --version&lt;/code&gt;
+entra-auth-cli --version&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="rhelcentosfedora-rpm"&gt;RHEL/CentOS/Fedora (RPM) &lt;a href="#rhelcentosfedora-rpm" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1932,18 +1932,18 @@ entratool --version&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="85e2726" class="language-bash line-numbers"&gt;
+ &lt;pre id="97c9cfb" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Download .rpm package
-wget https://github.com/garrardkitchen/entratool-cli/releases/latest/download/entratool-1.0.0-1.x86_64.rpm
+wget https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-1.0.0-1.x86_64.rpm
 
 # Install
-sudo rpm -ivh entratool-1.0.0-1.x86_64.rpm
+sudo rpm -ivh entra-auth-cli-1.0.0-1.x86_64.rpm
 
 # Or use dnf
-sudo dnf install https://github.com/garrardkitchen/entratool-cli/releases/latest/download/entratool-1.0.0-1.x86_64.rpm
+sudo dnf install https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-1.0.0-1.x86_64.rpm
 
 # Verify
-entratool --version&lt;/code&gt;
+entra-auth-cli --version&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="arch-linux-aur"&gt;Arch Linux (AUR) &lt;a href="#arch-linux-aur" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -1964,16 +1964,16 @@ entratool --version&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="d75155a" class="language-bash line-numbers"&gt;
+ &lt;pre id="a19ffb0" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Using yay
-yay -S entratool-cli
+yay -S entra-auth-cli-cli
 
 # Using paru
-paru -S entratool-cli
+paru -S entra-auth-cli-cli
 
 # Manual from AUR
-git clone https://aur.archlinux.org/entratool-cli.git
-cd entratool-cli
+git clone https://aur.archlinux.org/entra-auth-cli-cli.git
+cd entra-auth-cli-cli
 makepkg -si&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
@@ -1995,16 +1995,16 @@ makepkg -si&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="8c0dd64" class="language-bash line-numbers"&gt;
+ &lt;pre id="d812230" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Download binary
-curl -L https://github.com/garrardkitchen/entratool-cli/releases/latest/download/entratool-linux-amd64 \
- -o /usr/local/bin/entratool
+curl -L https://github.com/garrardkitchen/entra-auth-cli-cli/releases/latest/download/entra-auth-cli-linux-amd64 \
+ -o /usr/local/bin/entra-auth-cli
 
 # Make executable
-chmod &amp;#43;x /usr/local/bin/entratool
+chmod &amp;#43;x /usr/local/bin/entra-auth-cli
 
 # Verify
-entratool --version&lt;/code&gt;
+entra-auth-cli --version&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="from-source"&gt;From Source &lt;a href="#from-source" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -2025,19 +2025,19 @@ entratool --version&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="a4dd79c" class="language-bash line-numbers"&gt;
+ &lt;pre id="0616001" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Prerequisites
 sudo apt-get install golang-go # Debian/Ubuntu
 sudo dnf install golang # Fedora/RHEL
 sudo pacman -S go # Arch
 
 # Clone and build
-git clone https://github.com/garrardkitchen/entratool-cli.git
-cd entratool-cli
-go build -o entratool ./cmd/entratool
+git clone https://github.com/garrardkitchen/entra-auth-cli-cli.git
+cd entra-auth-cli-cli
+go build -o entra-auth-cli ./cmd/entra-auth-cli
 
 # Install
-sudo mv entratool /usr/local/bin/&lt;/code&gt;
+sudo mv entra-auth-cli /usr/local/bin/&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h2 id="token-storage"&gt;Token Storage &lt;a href="#token-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="storage-location"&gt;Storage Location &lt;a href="#storage-location" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -2058,9 +2058,9 @@ sudo mv entratool /usr/local/bin/&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="f6556ac" class="language-bash line-numbers"&gt;
+ &lt;pre id="eb08969" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Tokens stored in user&amp;#39;s home directory
-~/.entratool/
+~/.entra-auth-cli/
 ├── profiles/
 │ ├── default.json # Profile configuration
 │ ├── default.token # Encrypted token
@@ -2069,10 +2069,10 @@ sudo mv entratool /usr/local/bin/&lt;/code&gt;
 └── config.json # Global configuration
 
 # Check storage
-ls -la ~/.entratool/profiles/&lt;/code&gt;
+ls -la ~/.entra-auth-cli/profiles/&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;h3 id="encryption"&gt;Encryption &lt;a href="#encryption" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Tokens are encrypted using XOR with a user-specific key:&lt;/p&gt;</description></item><item><title>Scopes &amp; Permissions</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/scopes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/scopes/</guid><description>&lt;h1 id="scopes--permissions"&gt;Scopes &amp;amp; Permissions &lt;a href="#scopes--permissions" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Scopes define what your application can access using an access token. Understanding scopes is critical for requesting the right permissions and troubleshooting authorization issues.&lt;/p&gt;
+&lt;h3 id="encryption"&gt;Encryption &lt;a href="#encryption" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Tokens are encrypted using XOR with a user-specific key:&lt;/p&gt;</description></item><item><title>Scopes &amp; Permissions</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/scopes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/scopes/</guid><description>&lt;h1 id="scopes--permissions"&gt;Scopes &amp;amp; Permissions &lt;a href="#scopes--permissions" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Scopes define what your application can access using an access token. Understanding scopes is critical for requesting the right permissions and troubleshooting authorization issues.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="what-are-scopes"&gt;What Are Scopes? &lt;a href="#what-are-scopes" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A &lt;strong&gt;scope&lt;/strong&gt; is a permission that grants access to specific resources or operations in an API.&lt;/p&gt;
 &lt;h3 id="format"&gt;Format &lt;a href="#format" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -2229,7 +2229,7 @@ api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="the-default-scope"&gt;The &lt;code&gt;.default&lt;/code&gt; Scope &lt;a href="#the-default-scope" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="what-it-means"&gt;What It Means &lt;a href="#what-it-means" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;.default&lt;/code&gt; suffix requests &lt;strong&gt;all permissions configured&lt;/strong&gt; in your app registration.&lt;/p&gt;</description></item><item><title>Working with Tokens</title><link>https://entratool-docs.garrardkitchen.com/docs/user-guide/working-with-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/user-guide/working-with-tokens/</guid><description>&lt;h1 id="working-with-tokens"&gt;Working with Tokens &lt;a href="#working-with-tokens" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Once you have an access token, learn how to inspect, validate, refresh, and use it effectively with APIs.&lt;/p&gt;
+&lt;h2 id="the-default-scope"&gt;The &lt;code&gt;.default&lt;/code&gt; Scope &lt;a href="#the-default-scope" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="what-it-means"&gt;What It Means &lt;a href="#what-it-means" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;.default&lt;/code&gt; suffix requests &lt;strong&gt;all permissions configured&lt;/strong&gt; in your app registration.&lt;/p&gt;</description></item><item><title>Working with Tokens</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/working-with-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/working-with-tokens/</guid><description>&lt;h1 id="working-with-tokens"&gt;Working with Tokens &lt;a href="#working-with-tokens" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Once you have an access token, learn how to inspect, validate, refresh, and use it effectively with APIs.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="quick-reference"&gt;Quick Reference &lt;a href="#quick-reference" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
  &lt;thead&gt;
@@ -2241,23 +2241,23 @@ api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/code&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td&gt;Inspect token&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool inspect -t TOKEN&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli inspect -t TOKEN&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Inspect from file&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool inspect -f token.txt&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli inspect -f token.txt&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Discover token info&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool discover -t TOKEN&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli discover -t TOKEN&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Refresh token&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool refresh -p PROFILE&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli refresh -p PROFILE&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Check expiration&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entratool discover -t TOKEN | jq .exp&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli discover -t TOKEN | jq .exp&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2280,11 +2280,11 @@ api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="32a0039" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool inspect -t &amp;#34;eyJ0eXAiOiJKV1QiLCJh...&amp;#34;&lt;/code&gt;
+ &lt;pre id="db0bf17" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli inspect -t &amp;#34;eyJ0eXAiOiJKV1QiLCJh...&amp;#34;&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>discover</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/discover/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/reference/discover/</guid><description>&lt;h1 id="discover"&gt;discover &lt;a href="#discover" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Quickly validate tokens and display essential information without full decoding.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>discover</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/discover/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/discover/</guid><description>&lt;h1 id="discover"&gt;discover &lt;a href="#discover" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Quickly validate tokens and display essential information without full decoding.&lt;/p&gt;
 &lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
 
 
@@ -2303,8 +2303,8 @@ api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="1b91211" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool discover [flags]&lt;/code&gt;
+ &lt;pre id="de82527" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli discover [flags]&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;discover&lt;/code&gt; command provides a fast way to validate token format and get basic information about tokens without performing full JWT decoding. It&amp;rsquo;s useful for quick checks and validation in scripts.&lt;/p&gt;
@@ -2315,7 +2315,7 @@ api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/code&gt;
 &lt;li&gt;Quick metadata extraction&lt;/li&gt;
 &lt;li&gt;Fast status reporting&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="input-options"&gt;Input Options &lt;a href="#input-options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="--profile--p"&gt;&lt;code&gt;--profile&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt; &lt;a href="#--profile--p" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Check token from a profile.&lt;/p&gt;</description></item><item><title>Interactive Browser Flow</title><link>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</guid><description>&lt;h1 id="interactive-browser-flow"&gt;Interactive Browser Flow &lt;a href="#interactive-browser-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Interactive Browser flow provides seamless user authentication by opening your system&amp;rsquo;s default web browser for sign-in, then automatically returning tokens to the CLI. This is the recommended flow for desktop applications and CLI tools that need user authentication.&lt;/p&gt;
+&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="input-options"&gt;Input Options &lt;a href="#input-options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="--profile--p"&gt;&lt;code&gt;--profile&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt; &lt;a href="#--profile--p" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Check token from a profile.&lt;/p&gt;</description></item><item><title>Interactive Browser Flow</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</guid><description>&lt;h1 id="interactive-browser-flow"&gt;Interactive Browser Flow &lt;a href="#interactive-browser-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Interactive Browser flow provides seamless user authentication by opening your system&amp;rsquo;s default web browser for sign-in, then automatically returning tokens to the CLI. This is the recommended flow for desktop applications and CLI tools that need user authentication.&lt;/p&gt;
 &lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Use this flow when:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You need user authentication in a CLI or desktop app&lt;/li&gt;
@@ -2323,7 +2323,7 @@ api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/code&gt;
 &lt;li&gt;You want the best user experience for interactive authentication&lt;/li&gt;
 &lt;li&gt;Working with delegated permissions (on behalf of a user)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Key benefits:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Secure Storage</title><link>https://entratool-docs.garrardkitchen.com/docs/core-concepts/secure-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/core-concepts/secure-storage/</guid><description>&lt;h1 id="secure-storage"&gt;Secure Storage &lt;a href="#secure-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Entra Token CLI uses platform-specific secure storage mechanisms to protect sensitive authentication data. Understanding how secrets are stored helps you make informed security decisions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key benefits:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Secure Storage</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/secure-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/secure-storage/</guid><description>&lt;h1 id="secure-storage"&gt;Secure Storage &lt;a href="#secure-storage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Entra Auth Cli uses platform-specific secure storage mechanisms to protect sensitive authentication data. Understanding how secrets are stored helps you make informed security decisions.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="platform-security-overview"&gt;Platform Security Overview &lt;a href="#platform-security-overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
  &lt;thead&gt;
@@ -2356,8 +2356,8 @@ api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/code&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
-&lt;h2 id="what-gets-stored"&gt;What Gets Stored &lt;a href="#what-gets-stored" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="profile-configuration-plaintext"&gt;Profile Configuration (Plaintext) &lt;a href="#profile-configuration-plaintext" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Location:&lt;/strong&gt; &lt;code&gt;~/.entratool/profiles.json&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Stored in plaintext:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>config</title><link>https://entratool-docs.garrardkitchen.com/docs/reference/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/reference/config/</guid><description>&lt;h1 id="config"&gt;config &lt;a href="#config" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Manage authentication profiles for storing connection settings and credentials.&lt;/p&gt;
+&lt;h2 id="what-gets-stored"&gt;What Gets Stored &lt;a href="#what-gets-stored" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="profile-configuration-plaintext"&gt;Profile Configuration (Plaintext) &lt;a href="#profile-configuration-plaintext" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Location:&lt;/strong&gt; &lt;code&gt;~/.entra-auth-cli/profiles.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stored in plaintext:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>config</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/config/</guid><description>&lt;h1 id="config"&gt;config &lt;a href="#config" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Manage authentication profiles for storing connection settings and credentials.&lt;/p&gt;
 &lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
 
 
@@ -2376,8 +2376,8 @@ api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="1ea136f" class="language-bash line-numbers"&gt;
- &lt;code&gt;entratool config &amp;lt;command&amp;gt; [flags]&lt;/code&gt;
+ &lt;pre id="7bb30ae" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli config &amp;lt;command&amp;gt; [flags]&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;config&lt;/code&gt; command manages authentication profiles, which store tenant information, client credentials, and authentication settings. Profiles allow you to easily switch between different applications, environments, or authentication methods.&lt;/p&gt;

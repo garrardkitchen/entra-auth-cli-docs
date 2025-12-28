@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OAuth2 Flows on Entra Token CLI Documentation</title><link>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/</link><description>Recent content in OAuth2 Flows on Entra Token CLI Documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://entratool-docs.garrardkitchen.com/docs/oauth-flows/index.xml" rel="self" type="application/rss+xml"/><item><title>Client Credentials Flow</title><link>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/</guid><description>&lt;h1 id="client-credentials-flow"&gt;Client Credentials Flow &lt;a href="#client-credentials-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Client Credentials flow is designed for service-to-service authentication where no user interaction is required. This is the most common flow for automation, CI/CD pipelines, and background services.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OAuth2 Flows on Entra Auth Cli Documentation</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/</link><description>Recent content in OAuth2 Flows on Entra Auth Cli Documentation</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/index.xml" rel="self" type="application/rss+xml"/><item><title>Client Credentials Flow</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/client-credentials/</guid><description>&lt;h1 id="client-credentials-flow"&gt;Client Credentials Flow &lt;a href="#client-credentials-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Client Credentials flow is designed for service-to-service authentication where no user interaction is required. This is the most common flow for automation, CI/CD pipelines, and background services.&lt;/p&gt;
 &lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Use this flow when:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Your application runs without user interaction&lt;/li&gt;
@@ -29,12 +29,12 @@
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="ae3925e" class="language-bash line-numbers"&gt;
+ &lt;pre id="c6880d2" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Create profile with client secret
-entratool create-profile
+entra-auth-cli create-profile
 
 # Generate token
-entratool get-token --profile myapp&lt;/code&gt;
+entra-auth-cli get-token --profile myapp&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h3 id="using-certificate"&gt;Using Certificate &lt;a href="#using-certificate" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -55,15 +55,15 @@ entratool get-token --profile myapp&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="06648d5" class="language-bash line-numbers"&gt;
+ &lt;pre id="8575bdd" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Create profile with certificate
-entratool create-profile --use-certificate
+entra-auth-cli create-profile --use-certificate
 
 # Generate token
-entratool get-token --profile myapp-cert&lt;/code&gt;
+entra-auth-cli get-token --profile myapp-cert&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;h2 id="configuration"&gt;Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="profile-setup"&gt;Profile Setup &lt;a href="#profile-setup" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When creating a profile for client credentials flow:&lt;/p&gt;</description></item><item><title>Authorization Code Flow</title><link>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/authorization-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/authorization-code/</guid><description>&lt;h1 id="authorization-code-flow"&gt;Authorization Code Flow &lt;a href="#authorization-code-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Authorization Code flow provides secure user authentication by redirecting to a web browser for sign-in, then exchanging an authorization code for tokens. This flow is used for applications that can securely store client secrets.&lt;/p&gt;
+&lt;h2 id="configuration"&gt;Configuration &lt;a href="#configuration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="profile-setup"&gt;Profile Setup &lt;a href="#profile-setup" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When creating a profile for client credentials flow:&lt;/p&gt;</description></item><item><title>Authorization Code Flow</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/authorization-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/authorization-code/</guid><description>&lt;h1 id="authorization-code-flow"&gt;Authorization Code Flow &lt;a href="#authorization-code-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Authorization Code flow provides secure user authentication by redirecting to a web browser for sign-in, then exchanging an authorization code for tokens. This flow is used for applications that can securely store client secrets.&lt;/p&gt;
 &lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Use this flow when:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Your application needs user authentication&lt;/li&gt;
@@ -71,7 +71,7 @@ entratool get-token --profile myapp-cert&lt;/code&gt;
 &lt;li&gt;You can securely store client secrets&lt;/li&gt;
 &lt;li&gt;You want the most secure user authentication flow&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Key characteristics:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Device Code Flow</title><link>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/device-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/device-code/</guid><description>&lt;h1 id="device-code-flow"&gt;Device Code Flow &lt;a href="#device-code-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Device Code flow enables authentication on devices that lack a web browser or have limited input capabilities. Users sign in on a separate device (like their phone or computer) while the original device polls for authentication completion.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key characteristics:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Device Code Flow</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/device-code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/device-code/</guid><description>&lt;h1 id="device-code-flow"&gt;Device Code Flow &lt;a href="#device-code-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Device Code flow enables authentication on devices that lack a web browser or have limited input capabilities. Users sign in on a separate device (like their phone or computer) while the original device polls for authentication completion.&lt;/p&gt;
 &lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Use this flow when:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Device doesn&amp;rsquo;t have a web browser&lt;/li&gt;
@@ -79,7 +79,7 @@ entratool get-token --profile myapp-cert&lt;/code&gt;
 &lt;li&gt;Working in SSH/remote terminal sessions&lt;/li&gt;
 &lt;li&gt;Browser-based authentication isn&amp;rsquo;t practical&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;How it works:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Interactive Browser Flow</title><link>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entratool-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</guid><description>&lt;h1 id="interactive-browser-flow"&gt;Interactive Browser Flow &lt;a href="#interactive-browser-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Interactive Browser flow provides seamless user authentication by opening your system&amp;rsquo;s default web browser for sign-in, then automatically returning tokens to the CLI. This is the recommended flow for desktop applications and CLI tools that need user authentication.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How it works:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Interactive Browser Flow</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</guid><description>&lt;h1 id="interactive-browser-flow"&gt;Interactive Browser Flow &lt;a href="#interactive-browser-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Interactive Browser flow provides seamless user authentication by opening your system&amp;rsquo;s default web browser for sign-in, then automatically returning tokens to the CLI. This is the recommended flow for desktop applications and CLI tools that need user authentication.&lt;/p&gt;
 &lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Use this flow when:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You need user authentication in a CLI or desktop app&lt;/li&gt;
