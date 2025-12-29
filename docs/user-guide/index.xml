@@ -59,7 +59,7 @@
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Silent mode&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entra-auth-cli get-token -p PROFILE --silent&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli get-token -p PROFILE&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Save to file&lt;/td&gt;
@@ -110,7 +110,7 @@
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Inspect from file&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;entra-auth-cli inspect -f token.txt&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli inspect - &amp;lt; token.txt&lt;/code&gt;&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;Discover token info&lt;/td&gt;

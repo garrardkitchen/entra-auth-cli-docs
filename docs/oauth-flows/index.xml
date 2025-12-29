@@ -29,9 +29,9 @@
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="c6880d2" class="language-bash line-numbers"&gt;
+ &lt;pre id="613fde9" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Create profile with client secret
-entra-auth-cli create-profile
+entra-auth-cli config create
 
 # Generate token
 entra-auth-cli get-token --profile myapp&lt;/code&gt;
@@ -55,9 +55,9 @@ entra-auth-cli get-token --profile myapp&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="8575bdd" class="language-bash line-numbers"&gt;
+ &lt;pre id="395e6a0" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Create profile with certificate
-entra-auth-cli create-profile --use-certificate
+entra-auth-cli config create --use-certificate
 
 # Generate token
 entra-auth-cli get-token --profile myapp-cert&lt;/code&gt;

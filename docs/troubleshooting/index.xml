@@ -40,12 +40,12 @@ Error: profile &amp;#39;production&amp;#39; not found&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="016a8be" class="language-bash line-numbers"&gt;
+ &lt;pre id="c28667c" class="language-bash line-numbers"&gt;
  &lt;code&gt;# See all configured profiles
-entra-auth-cli list-profiles
+entra-auth-cli config list
 
 # Check if profile exists with different name
-entra-auth-cli list-profiles | grep -i prod&lt;/code&gt;
+entra-auth-cli config list | grep -i prod&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h4 id="2-create-missing-profile"&gt;2. Create Missing Profile &lt;a href="#2-create-missing-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
@@ -66,12 +66,12 @@ entra-auth-cli list-profiles | grep -i prod&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="ee98472" class="language-bash line-numbers"&gt;
+ &lt;pre id="8c5a9a2" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Create the profile
-entra-auth-cli create-profile --name production
+entra-auth-cli config create -p production
 
 # Or use interactive mode
-entra-auth-cli create-profile&lt;/code&gt;
+entra-auth-cli config create&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h4 id="3-use-default-profile"&gt;3. Use Default Profile &lt;a href="#3-use-default-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
@@ -92,12 +92,12 @@ entra-auth-cli create-profile&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="30aefb1" class="language-bash line-numbers"&gt;
+ &lt;pre id="ec793b7" class="language-bash line-numbers"&gt;
  &lt;code&gt;# If you meant to use default profile
 entra-auth-cli get-token
 
 # Check default profile
-entra-auth-cli list-profiles | grep default&lt;/code&gt;
+entra-auth-cli config list | grep default&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h2 id="profile-already-exists"&gt;Profile Already Exists &lt;a href="#profile-already-exists" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="problem-1"&gt;Problem &lt;a href="#problem-1" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -118,8 +118,8 @@ entra-auth-cli list-profiles | grep default&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="c7166d9" class="language-bash line-numbers"&gt;
- &lt;code&gt;$ entra-auth-cli create-profile --name dev
+ &lt;pre id="bec6727" class="language-bash line-numbers"&gt;
+ &lt;code&gt;$ entra-auth-cli config create -p dev
 Error: profile &amp;#39;dev&amp;#39; already exists&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
@@ -141,12 +141,12 @@ Error: profile &amp;#39;dev&amp;#39; already exists&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="114bfdd" class="language-bash line-numbers"&gt;
+ &lt;pre id="4924268" class="language-bash line-numbers"&gt;
  &lt;code&gt;# View existing profile
-entra-auth-cli show-profile --name dev
+entra-auth-cli config list # Note: no show command exists, use -p dev
 
 # Edit if needed
-entra-auth-cli edit-profile --name dev&lt;/code&gt;
+entra-auth-cli config edit -p dev&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h4 id="2-delete-and-recreate"&gt;2. Delete and Recreate &lt;a href="#2-delete-and-recreate" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
@@ -167,12 +167,12 @@ entra-auth-cli edit-profile --name dev&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="0dee214" class="language-bash line-numbers"&gt;
+ &lt;pre id="c1add85" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Delete existing profile
-entra-auth-cli delete-profile --name dev
+entra-auth-cli config delete -p dev
 
 # Create new one
-entra-auth-cli create-profile --name dev&lt;/code&gt;
+entra-auth-cli config create -p dev&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h4 id="3-use-different-name"&gt;3. Use Different Name &lt;a href="#3-use-different-name" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;
@@ -193,10 +193,10 @@ entra-auth-cli create-profile --name dev&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="61515ec" class="language-bash line-numbers"&gt;
+ &lt;pre id="dc47b91" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Create with different name
-entra-auth-cli create-profile --name dev-new
-entra-auth-cli create-profile --name dev-v2&lt;/code&gt;
+entra-auth-cli config create -p dev-new
+entra-auth-cli config create -p dev-v2&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h2 id="invalid-profile-configuration"&gt;Invalid Profile Configuration &lt;a href="#invalid-profile-configuration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="problem-2"&gt;Problem &lt;a href="#problem-2" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -240,9 +240,9 @@ Error: invalid profile configuration: missing tenant_id&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="43f54d9" class="language-bash line-numbers"&gt;
+ &lt;pre id="260c0b5" class="language-bash line-numbers"&gt;
  &lt;code&gt;# View profile details
-entra-auth-cli show-profile --name myapp
+entra-auth-cli config list # Note: no show command exists, use -p myapp
 
 # Look for missing fields:
 # - tenant_id
@@ -268,13 +268,13 @@ entra-auth-cli show-profile --name myapp
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="5eae6e6" class="language-bash line-numbers"&gt;
+ &lt;pre id="a9f8756" class="language-bash line-numbers"&gt;
  &lt;code&gt;# Interactive edit
-entra-auth-cli edit-profile --name myapp
+entra-auth-cli config edit -p myapp
 
 # Or delete and recreate
-entra-auth-cli delete-profile --name myapp
-entra-auth-cli create-profile --name myapp&lt;/code&gt;
+entra-auth-cli config delete -p myapp
+entra-auth-cli config create -p myapp&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;h4 id="3-validate-required-fields"&gt;3. Validate Required Fields &lt;a href="#3-validate-required-fields" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;

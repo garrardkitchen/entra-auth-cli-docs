@@ -78,7 +78,7 @@
 &lt;li&gt;Tokens from files&lt;/li&gt;
 &lt;li&gt;Tokens passed as arguments&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="input-options"&gt;Input Options &lt;a href="#input-options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="--profile--p"&gt;&lt;code&gt;--profile&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt; &lt;a href="#--profile--p" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Inspect token from a profile.&lt;/p&gt;</description></item><item><title>discover</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/discover/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/discover/</guid><description>&lt;h1 id="discover"&gt;discover &lt;a href="#discover" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Quickly validate tokens and display essential information without full decoding.&lt;/p&gt;
+&lt;h2 id="usage"&gt;Usage &lt;a href="#usage" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;inspect&lt;/code&gt; command accepts a JWT token as an argument or via stdin:&lt;/p&gt;</description></item><item><title>discover</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/discover/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/discover/</guid><description>&lt;h1 id="discover"&gt;discover &lt;a href="#discover" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Discover and search for Azure AD app registrations in your tenant.&lt;/p&gt;
 &lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
 
 
@@ -97,19 +97,36 @@
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="de82527" class="language-bash line-numbers"&gt;
- &lt;code&gt;entra-auth-cli discover [flags]&lt;/code&gt;
+ &lt;pre id="4c14357" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli discover [options]&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;discover&lt;/code&gt; command provides a fast way to validate token format and get basic information about tokens without performing full JWT decoding. It&amp;rsquo;s useful for quick checks and validation in scripts.&lt;/p&gt;
-&lt;p&gt;This command is lighter than &lt;code&gt;inspect&lt;/code&gt; and focuses on:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Token format validation&lt;/li&gt;
-&lt;li&gt;Basic validity checks&lt;/li&gt;
-&lt;li&gt;Quick metadata extraction&lt;/li&gt;
-&lt;li&gt;Fast status reporting&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="input-options"&gt;Input Options &lt;a href="#input-options" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4 id="--profile--p"&gt;&lt;code&gt;--profile&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt; &lt;a href="#--profile--p" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Check token from a profile.&lt;/p&gt;</description></item><item><title>config</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/config/</guid><description>&lt;h1 id="config"&gt;config &lt;a href="#config" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Manage authentication profiles for storing connection settings and credentials.&lt;/p&gt;
+&lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;discover&lt;/code&gt; command helps you find Azure AD app registrations in a tenant. You can search by wildcard patterns to locate specific applications.&lt;/p&gt;
+&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h4 id="-t---tenant"&gt;&lt;code&gt;-t&lt;/code&gt;, &lt;code&gt;--tenant&lt;/code&gt; &lt;a href="#-t---tenant" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Tenant ID to search in (required for tenant-specific searches).&lt;/p&gt;
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ &lt;div class="prism-codeblock linenos"&gt;
+ &lt;pre id="b09b437" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli discover -t contoso.onmicrosoft.com
+entra-auth-cli discover --tenant &amp;#34;12345678-1234-1234-1234-123456789012&amp;#34;&lt;/code&gt;
+ &lt;/pre&gt;
+ &lt;/div&gt;
+&lt;h4 id="-s---search"&gt;&lt;code&gt;-s&lt;/code&gt;, &lt;code&gt;--search&lt;/code&gt; &lt;a href="#-s---search" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Search pattern with wildcard support.&lt;/p&gt;</description></item><item><title>config</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/config/</guid><description>&lt;h1 id="config"&gt;config &lt;a href="#config" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Manage authentication profiles for storing connection settings and credentials.&lt;/p&gt;
 &lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
 
 

@@ -54,8 +54,8 @@
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="8d9ecab" class="language-bash line-numbers"&gt;
- &lt;code&gt;TOKEN=$(entra-auth-cli get-token -p graph-readonly --silent)
+ &lt;pre id="e161c25" class="language-bash line-numbers"&gt;
+ &lt;code&gt;TOKEN=$(entra-auth-cli get-token -p graph-readonly )
 curl -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; \
  https://graph.microsoft.com/v1.0/me | jq&lt;/code&gt;
  &lt;/pre&gt;
@@ -117,326 +117,22 @@ curl -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; \
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="b9d01a4" class="language-bash line-numbers"&gt;
- &lt;code&gt;TOKEN=$(entra-auth-cli get-token -p azure-mgmt --silent)
+ &lt;pre id="8341386" class="language-bash line-numbers"&gt;
+ &lt;code&gt;TOKEN=$(entra-auth-cli get-token -p azure-mgmt )
 curl -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; \
  &amp;#39;https://management.azure.com/subscriptions?api-version=2020-01-01&amp;#39; | jq&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
 &lt;h2 id="list-subscriptions"&gt;List Subscriptions &lt;a href="#list-subscriptions" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Retrieve all Azure subscriptions.&lt;/p&gt;</description></item><item><title>CI/CD Integration</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/cicd-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/cicd-integration/</guid><description>&lt;h1 id="cicd-integration"&gt;CI/CD Integration &lt;a href="#cicd-integration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to integrate Entra Auth Cli into your CI/CD pipelines for automated authentication.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="github-actions"&gt;GitHub Actions &lt;a href="#github-actions" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="basic-example"&gt;Basic Example &lt;a href="#basic-example" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock "&gt;
- &lt;pre id="1f65c83" class="language-yaml "&gt;
- &lt;code&gt;name: Deploy
-
-on: [push]
-
-jobs:
- deploy:
- runs-on: ubuntu-latest
- steps:
- - uses: actions/checkout@v3
- 
- - name: Install Entra Auth Cli
- run: |
- dotnet tool install --global EntraAuthCli
- 
- - name: Create Profile
- env:
- CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
- TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
- CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
- run: |
- # Create profile non-interactively
- cat &amp;gt; profile.json &amp;lt;&amp;lt;EOF
- {
- &amp;#34;name&amp;#34;: &amp;#34;cicd&amp;#34;,
- &amp;#34;clientId&amp;#34;: &amp;#34;$CLIENT_ID&amp;#34;,
- &amp;#34;tenantId&amp;#34;: &amp;#34;$TENANT_ID&amp;#34;,
- &amp;#34;scope&amp;#34;: &amp;#34;https://management.azure.com/.default&amp;#34;,
- &amp;#34;useClientSecret&amp;#34;: true
- }
- EOF
- entra-auth-cli config import -f profile.json
- 
- # Store secret (implementation depends on tool capabilities)
- 
- - name: Deploy to Azure
- run: |
- TOKEN=$(entra-auth-cli get-token -p cicd --silent)
- 
- # Use token for deployment
- curl -X POST \
- -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; \
- -H &amp;#34;Content-Type: application/json&amp;#34; \
- -d @deployment.json \
- &amp;#34;https://management.azure.com/...&amp;#34;&lt;/code&gt;
- &lt;/pre&gt;
- &lt;/div&gt;
-&lt;h3 id="with-matrix-strategy"&gt;With Matrix Strategy &lt;a href="#with-matrix-strategy" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock "&gt;
- &lt;pre id="e6bf204" class="language-yaml "&gt;
- &lt;code&gt;name: Multi-Environment Deploy
-
-on: [push]
-
-jobs:
- deploy:
- runs-on: ubuntu-latest
- strategy:
- matrix:
- environment: [dev, staging, prod]
- steps:
- - uses: actions/checkout@v3
- 
- - name: Setup Entra Auth Cli
- run: dotnet tool install --global EntraAuthCli
- 
- - name: Deploy to ${{ matrix.environment }}
- env:
- CLIENT_ID: ${{ secrets[format(&amp;#39;{0}_CLIENT_ID&amp;#39;, matrix.environment)] }}
- TENANT_ID: ${{ secrets[format(&amp;#39;{0}_TENANT_ID&amp;#39;, matrix.environment)] }}
- CLIENT_SECRET: ${{ secrets[format(&amp;#39;{0}_CLIENT_SECRET&amp;#39;, matrix.environment)] }}
- run: |
- # Create environment-specific profile
- entra-auth-cli config create --name ${{ matrix.environment }} \
- --client-id &amp;#34;$CLIENT_ID&amp;#34; \
- --tenant-id &amp;#34;$TENANT_ID&amp;#34;
- 
- TOKEN=$(entra-auth-cli get-token -p ${{ matrix.environment }} --silent)
- ./deploy.sh &amp;#34;$TOKEN&amp;#34; &amp;#34;${{ matrix.environment }}&amp;#34;&lt;/code&gt;
- &lt;/pre&gt;
- &lt;/div&gt;
-&lt;hr&gt;
-&lt;h2 id="azure-pipelines"&gt;Azure Pipelines &lt;a href="#azure-pipelines" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="basic-example-1"&gt;Basic Example &lt;a href="#basic-example-1" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock "&gt;
- &lt;pre id="cdead38" class="language-yaml "&gt;
- &lt;code&gt;trigger:
- - main
-
-pool:
- vmImage: &amp;#39;ubuntu-latest&amp;#39;
-
-steps:
-- script: |
- dotnet tool install --global EntraAuthCli
- displayName: &amp;#39;Install Entra Auth Cli&amp;#39;
-
-- task: AzureCLI@2
- inputs:
- azureSubscription: &amp;#39;MyServiceConnection&amp;#39;
- scriptType: &amp;#39;bash&amp;#39;
- scriptLocation: &amp;#39;inlineScript&amp;#39;
- inlineScript: |
- # Create profile
- entra-auth-cli config create --non-interactive \
- --name cicd \
- --client-id $(ClientId) \
- --tenant-id $(TenantId) \
- --client-secret $(ClientSecret) \
- --scope &amp;#34;https://management.azure.com/.default&amp;#34;
- 
- # Get token
- TOKEN=$(entra-auth-cli get-token -p cicd --silent)
- 
- # Deploy
- ./deploy.sh &amp;#34;$TOKEN&amp;#34;&lt;/code&gt;
- &lt;/pre&gt;
- &lt;/div&gt;
-&lt;h3 id="with-deployment-job"&gt;With Deployment Job &lt;a href="#with-deployment-job" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock "&gt;
- &lt;pre id="e0eec80" class="language-yaml "&gt;
- &lt;code&gt;trigger:
- - main
-
-pool:
- vmImage: &amp;#39;ubuntu-latest&amp;#39;
-
-stages:
-- stage: Build
- jobs:
- - job: BuildJob
- steps:
- - script: dotnet build
- displayName: &amp;#39;Build Application&amp;#39;
-
-- stage: Deploy
- dependsOn: Build
- jobs:
- - deployment: DeployJob
- environment: &amp;#39;production&amp;#39;
- strategy:
- runOnce:
- deploy:
- steps:
- - script: dotnet tool install --global EntraAuthCli
- displayName: &amp;#39;Install CLI&amp;#39;
- 
- - script: |
- entra-auth-cli config create --name prod \
- --client-id $(ClientId) \
- --tenant-id $(TenantId)
- 
- TOKEN=$(entra-auth-cli get-token -p prod --silent)
- ./deploy-to-production.sh &amp;#34;$TOKEN&amp;#34;
- displayName: &amp;#39;Deploy&amp;#39;&lt;/code&gt;
- &lt;/pre&gt;
- &lt;/div&gt;
-&lt;hr&gt;
-&lt;h2 id="gitlab-ci"&gt;GitLab CI &lt;a href="#gitlab-ci" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock "&gt;
- &lt;pre id="13debbd" class="language-yaml "&gt;
- &lt;code&gt;stages:
- - deploy
-
-deploy:
- stage: deploy
- image: mcr.microsoft.com/dotnet/sdk:8.0
- script:
- - dotnet tool install --global EntraAuthCli
- - export PATH=&amp;#34;$PATH:/root/.dotnet/tools&amp;#34;
- 
- # Create profile
- - |
- cat &amp;gt; profile.json &amp;lt;&amp;lt;EOF
- {
- &amp;#34;name&amp;#34;: &amp;#34;gitlab-ci&amp;#34;,
- &amp;#34;clientId&amp;#34;: &amp;#34;$AZURE_CLIENT_ID&amp;#34;,
- &amp;#34;tenantId&amp;#34;: &amp;#34;$AZURE_TENANT_ID&amp;#34;,
- &amp;#34;scope&amp;#34;: &amp;#34;https://management.azure.com/.default&amp;#34;
- }
- EOF
- - entra-auth-cli config import -f profile.json
- 
- # Deploy
- - TOKEN=$(entra-auth-cli get-token -p gitlab-ci --silent)
- - ./deploy.sh &amp;#34;$TOKEN&amp;#34;
- only:
- - main&lt;/code&gt;
- &lt;/pre&gt;
- &lt;/div&gt;
-&lt;hr&gt;
-&lt;h2 id="jenkins"&gt;Jenkins &lt;a href="#jenkins" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
-
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
- &lt;div class="prism-codeblock "&gt;
- &lt;pre id="e681468" class="language-groovy "&gt;
- &lt;code&gt;pipeline {
- agent any
- 
- environment {
- CLIENT_ID = credentials(&amp;#39;azure-client-id&amp;#39;)
- TENANT_ID = credentials(&amp;#39;azure-tenant-id&amp;#39;)
- CLIENT_SECRET = credentials(&amp;#39;azure-client-secret&amp;#39;)
- }
- 
- stages {
- stage(&amp;#39;Setup&amp;#39;) {
- steps {
- sh &amp;#39;dotnet tool install --global EntraAuthCli&amp;#39;
- }
- }
- 
- stage(&amp;#39;Deploy&amp;#39;) {
- steps {
- sh &amp;#39;&amp;#39;&amp;#39;
- # Create profile
- entra-auth-cli config create --name jenkins \
- --client-id &amp;#34;$CLIENT_ID&amp;#34; \
- --tenant-id &amp;#34;$TENANT_ID&amp;#34;
- 
- # Get token
- TOKEN=$(entra-auth-cli get-token -p jenkins --silent)
- 
- # Deploy
- ./deploy.sh &amp;#34;$TOKEN&amp;#34;
- &amp;#39;&amp;#39;&amp;#39;
- }
- }
- }
-}&lt;/code&gt;
- &lt;/pre&gt;
- &lt;/div&gt;
-&lt;hr&gt;
-&lt;h2 id="best-practices"&gt;Best Practices &lt;a href="#best-practices" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="use-service-principals"&gt;Use Service Principals &lt;a href="#use-service-principals" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create dedicated service principals for CI/CD:&lt;/p&gt;</description></item><item><title>Bash Scripting</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/bash-scripts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/bash-scripts/</guid><description>&lt;h1 id="bash-scripting"&gt;Bash Scripting &lt;a href="#bash-scripting" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to use Entra Auth Cli in Bash scripts with proper error handling, caching, and best practices.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;⚠️ Important Note on CI/CD Usage:&lt;/strong&gt;&lt;br&gt;
+The &lt;code&gt;entra-auth-cli config create&lt;/code&gt; command is &lt;strong&gt;fully interactive&lt;/strong&gt; and cannot accept credentials via command-line flags. For CI/CD scenarios, you have two options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Export profiles locally&lt;/strong&gt; and import them in CI/CD (using encrypted files with passphrases stored as secrets)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use direct get-token&lt;/strong&gt; with profiles created ahead of time and secrets managed via secure storage&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The examples below show both approaches.&lt;/p&gt;</description></item><item><title>Bash Scripting</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/bash-scripts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/bash-scripts/</guid><description>&lt;h1 id="bash-scripting"&gt;Bash Scripting &lt;a href="#bash-scripting" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to use Entra Auth Cli in Bash scripts with proper error handling, caching, and best practices.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="token-caching"&gt;Token Caching &lt;a href="#token-caching" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Implement token caching to improve performance and reduce authentication requests.&lt;/p&gt;
 
@@ -457,7 +153,7 @@ deploy:
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="c060029" class="language-bash line-numbers"&gt;
+ &lt;pre id="38cd790" class="language-bash line-numbers"&gt;
  &lt;code&gt;#!/bin/bash
 set -euo pipefail
 
@@ -469,14 +165,14 @@ get_token() {
  
  # Check if cached token exists and is valid
  if [ -f &amp;#34;$TOKEN_CACHE&amp;#34; ]; then
- if entra-auth-cli discover -f &amp;#34;$TOKEN_CACHE&amp;#34; &amp;amp;&amp;gt;/dev/null; then
+ if entra-auth-cli inspect - &amp;lt; &amp;#34;$TOKEN_CACHE&amp;#34; &amp;amp;&amp;gt;/dev/null; then
  cat &amp;#34;$TOKEN_CACHE&amp;#34;
  return 0
  fi
  fi
  
  # Get fresh token
- entra-auth-cli get-token -p &amp;#34;$profile&amp;#34; --silent | tee &amp;#34;$TOKEN_CACHE&amp;#34;
+ entra-auth-cli get-token -p &amp;#34;$profile&amp;#34; | tee &amp;#34;$TOKEN_CACHE&amp;#34;
  chmod 600 &amp;#34;$TOKEN_CACHE&amp;#34;
 }
 
@@ -503,9 +199,9 @@ curl -H &amp;#34;Authorization: Bearer $TOKEN&amp;#34; https://api.example.com&l
  
 
  &lt;div class="prism-codeblock "&gt;
- &lt;pre id="70dd069" class="language-powershell "&gt;
+ &lt;pre id="ab7dafc" class="language-powershell "&gt;
  &lt;code&gt;# Get token
-$token = entra-auth-cli get-token -p my-profile --silent
+$token = entra-auth-cli get-token -p my-profile
 
 # Use with Invoke-RestMethod
 $headers = @{
@@ -542,7 +238,7 @@ $response | ConvertTo-Json&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="0e6fee8" class="language-bash line-numbers"&gt;
+ &lt;pre id="5ea8f32" class="language-bash line-numbers"&gt;
  &lt;code&gt;#!/bin/bash
 set -euo pipefail
 
@@ -551,7 +247,7 @@ TOKEN_FILE=$(mktemp)
 trap &amp;#34;rm -f $TOKEN_FILE&amp;#34; EXIT
 
 # Get token with restricted permissions
-entra-auth-cli get-token -p my-profile --silent &amp;gt; &amp;#34;$TOKEN_FILE&amp;#34;
+entra-auth-cli get-token -p my-profile &amp;gt; &amp;#34;$TOKEN_FILE&amp;#34;
 chmod 600 &amp;#34;$TOKEN_FILE&amp;#34;
 
 # Use token
@@ -611,7 +307,7 @@ logger &amp;#34;Authentication completed&amp;#34;&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="da60fad" class="language-bash line-numbers"&gt;
+ &lt;pre id="7f07754" class="language-bash line-numbers"&gt;
  &lt;code&gt;#!/bin/bash
 
 call_api_with_rate_limit() {
@@ -649,7 +345,7 @@ call_api_with_rate_limit() {
 }
 
 # Usage
-TOKEN=$(entra-auth-cli get-token -p my-profile --silent)
+TOKEN=$(entra-auth-cli get-token -p my-profile )
 call_api_with_rate_limit &amp;#34;https://graph.microsoft.com/v1.0/users&amp;#34; &amp;#34;$TOKEN&amp;#34;&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
