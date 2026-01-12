@@ -551,81 +551,7 @@ call_api_with_rate_limit &amp;#34;https://graph.microsoft.com/v1.0/users&amp;#34
  &lt;/pre&gt;
  &lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="pattern-parallel-api-calls"&gt;Pattern: Parallel API Calls &lt;a href="#pattern-parallel-api-calls" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make multiple API calls concurrently for better performance.&lt;/p&gt;</description></item><item><title>Service Principal Authentication</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/service-principals/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/service-principals/</guid><description>&lt;h1 id="service-principal-authentication"&gt;Service Principal Authentication &lt;a href="#service-principal-authentication" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to use service principals (app registrations) for non-interactive authentication with Entra Auth Cli.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Service principals are ideal for:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Automated scripts&lt;/strong&gt; - No user interaction required&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CI/CD pipelines&lt;/strong&gt; - Secure authentication in build processes&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Background services&lt;/strong&gt; - Long-running applications&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Server-to-server&lt;/strong&gt; - API-to-API authentication&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Authentication methods:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Client secrets (shared secrets)&lt;/li&gt;
-&lt;li&gt;Certificates (more secure)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id="prerequisites"&gt;Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="create-app-registration"&gt;Create App Registration &lt;a href="#create-app-registration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Go to &lt;a href="https://portal.azure.com" rel="external" target="_blank"&gt;Azure Portal&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/&gt;&lt;/svg&gt;&lt;/a&gt; → &lt;strong&gt;Entra ID&lt;/strong&gt; → &lt;strong&gt;App registrations&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;New registration&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Enter a name: &lt;code&gt;MyServicePrincipal&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Select &lt;strong&gt;Accounts in this organizational directory only&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;Register&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id="grant-api-permissions"&gt;Grant API Permissions &lt;a href="#grant-api-permissions" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;In your app registration, go to &lt;strong&gt;API permissions&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;Add a permission&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Select &lt;strong&gt;Microsoft Graph&lt;/strong&gt; (or your API)&lt;/li&gt;
-&lt;li&gt;Choose &lt;strong&gt;Application permissions&lt;/strong&gt; (not Delegated)&lt;/li&gt;
-&lt;li&gt;Select required permissions (e.g., &lt;code&gt;User.Read.All&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;Grant admin consent&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id="client-secret-authentication"&gt;Client Secret Authentication &lt;a href="#client-secret-authentication" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="step-1-create-client-secret"&gt;Step 1: Create Client Secret &lt;a href="#step-1-create-client-secret" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In your app registration:&lt;/p&gt;</description></item><item><title>Custom APIs</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/custom-apis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/recipes/custom-apis/</guid><description>&lt;h1 id="custom-apis"&gt;Custom APIs &lt;a href="#custom-apis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Learn how to use Entra Auth Cli to authenticate and call your own custom APIs protected by Microsoft Entra ID.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Entra Auth Cli can generate tokens for any API protected by Entra ID:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Internal APIs&lt;/strong&gt; - Your organization&amp;rsquo;s microservices&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Partner APIs&lt;/strong&gt; - Third-party services&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-tenant APIs&lt;/strong&gt; - APIs serving multiple organizations&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Authentication scenarios:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Service-to-service (client credentials)&lt;/li&gt;
-&lt;li&gt;User-delegated (on-behalf-of)&lt;/li&gt;
-&lt;li&gt;API chaining (downstream APIs)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id="prerequisites"&gt;Prerequisites &lt;a href="#prerequisites" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="register-your-api-in-azure"&gt;Register Your API in Azure &lt;a href="#register-your-api-in-azure" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Go to &lt;a href="https://portal.azure.com" rel="external" target="_blank"&gt;Azure Portal&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/&gt;&lt;/svg&gt;&lt;/a&gt; → &lt;strong&gt;Entra ID&lt;/strong&gt; → &lt;strong&gt;App registrations&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;New registration&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Enter name: &lt;code&gt;MyCustomAPI&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Select appropriate account types&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;Register&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id="expose-api-scopes"&gt;Expose API Scopes &lt;a href="#expose-api-scopes" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;In your API app registration, go to &lt;strong&gt;Expose an API&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Set &lt;strong&gt;Application ID URI&lt;/strong&gt;: &lt;code&gt;api://your-api-id&lt;/code&gt; (or custom domain)&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;Add a scope&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Scope name&lt;/strong&gt;: &lt;code&gt;access_as_user&lt;/code&gt; (or custom)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Who can consent&lt;/strong&gt;: Admins and users&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Display name&lt;/strong&gt;: &amp;ldquo;Access My API&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Description&lt;/strong&gt;: &amp;ldquo;Allows the app to access My API&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;Add scope&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id="register-client-app"&gt;Register Client App &lt;a href="#register-client-app" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Create another app registration for the client&lt;/li&gt;
-&lt;li&gt;Go to &lt;strong&gt;API permissions&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;Add a permission&lt;/strong&gt; → &lt;strong&gt;My APIs&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Select your API and the scope you created&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;Grant admin consent&lt;/strong&gt; (if required)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id="service-to-service-client-credentials"&gt;Service-to-Service (Client Credentials) &lt;a href="#service-to-service-client-credentials" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="api-configuration"&gt;API Configuration &lt;a href="#api-configuration" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Your API&amp;rsquo;s &lt;code&gt;appsettings.json&lt;/code&gt;:&lt;/p&gt;</description></item><item><title>Authentication Profiles</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/profiles/</guid><description>&lt;h1 id="authentication-profiles"&gt;Authentication Profiles &lt;a href="#authentication-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Profiles are saved authentication configurations that store everything needed to generate tokens for a specific application or scenario.&lt;/p&gt;
+&lt;h2 id="pattern-parallel-api-calls"&gt;Pattern: Parallel API Calls &lt;a href="#pattern-parallel-api-calls" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make multiple API calls concurrently for better performance.&lt;/p&gt;</description></item><item><title>Authentication Profiles</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/core-concepts/profiles/</guid><description>&lt;h1 id="authentication-profiles"&gt;Authentication Profiles &lt;a href="#authentication-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Profiles are saved authentication configurations that store everything needed to generate tokens for a specific application or scenario.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="what-is-a-profile"&gt;What is a Profile? &lt;a href="#what-is-a-profile" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A profile contains:&lt;/p&gt;
 &lt;ul&gt;
@@ -816,28 +742,12 @@ entra-auth-cli get-token --profile myapp-cert&lt;/code&gt;
  
 
  &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="47c61cd" class="language-bash line-numbers"&gt;
- &lt;code&gt;entra-auth-cli
-# or
-entra-auth-cli --version&lt;/code&gt;
+ &lt;pre id="7a4f84f" class="language-bash line-numbers"&gt;
+ &lt;code&gt;entra-auth-cli --version&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;p&gt;
-
-
-
-
-
- 
-
-
-
- 
- 
- &lt;img src="https://entra-auth-cli-docs.garrardkitchen.com/images/cli-no-cmd.png" alt="sensitive-data-debug-mode" width="2172" height="1316" loading="lazy"&gt;
- 
- 
-&lt;/p&gt;</description></item><item><title>Managing Profiles</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/managing-profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/managing-profiles/</guid><description>&lt;h1 id="managing-profiles"&gt;Managing Profiles &lt;a href="#managing-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Authentication profiles store your configuration for connecting to Microsoft Entra ID. Learn how to create, view, edit, and delete profiles.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="option-2-self-contained-executables"&gt;Option 2: Self-Contained Executables &lt;a href="#option-2-self-contained-executables" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Download the latest release for your platform from the &lt;a href="https://github.com/garrardkitchen/entra-token-cli/releases" rel="external" target="_blank"&gt;Releases page&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/&gt;&lt;/svg&gt;&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Managing Profiles</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/managing-profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/managing-profiles/</guid><description>&lt;h1 id="managing-profiles"&gt;Managing Profiles &lt;a href="#managing-profiles" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Authentication profiles store your configuration for connecting to Microsoft Entra ID. Learn how to create, view, edit, and delete profiles.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="quick-reference"&gt;Quick Reference &lt;a href="#quick-reference" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
  &lt;thead&gt;
