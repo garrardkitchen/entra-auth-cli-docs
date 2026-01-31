@@ -1980,7 +1980,32 @@ api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/code&gt;
  &lt;code&gt;entra-auth-cli inspect -t &amp;#34;eyJ0eXAiOiJKV1QiLCJh...&amp;#34;&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>discover</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/discover/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/discover/</guid><description>&lt;h1 id="discover"&gt;discover &lt;a href="#discover" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Discover and search for Azure AD app registrations in your tenant.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>App Discovery</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/app-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/app-discovery/</guid><description>&lt;h1 id="app-discovery"&gt;App Discovery &lt;a href="#app-discovery" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The &lt;code&gt;discover&lt;/code&gt; command helps you find Azure AD app registrations and create profiles directly from them. This streamlines the setup process by automatically detecting your apps and their API permissions.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="quick-reference"&gt;Quick Reference &lt;a href="#quick-reference" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Task&lt;/th&gt;
+ &lt;th&gt;Command&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Discover apps in tenant&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli discover&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Search with pattern&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli discover -s &amp;quot;MyApp*&amp;quot;&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Specify tenant&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;entra-auth-cli discover -t tenant-id&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Instead of manually entering Client IDs and configuring scopes, the &lt;code&gt;discover&lt;/code&gt; command:&lt;/p&gt;</description></item><item><title>discover</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/discover/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/discover/</guid><description>&lt;h1 id="discover"&gt;discover &lt;a href="#discover" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Discover and search for Azure AD app registrations in your tenant, with the ability to create profiles directly from discovered apps.&lt;/p&gt;
 &lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
 
 
@@ -2003,32 +2028,8 @@ api://12345678-1234-1234-1234-123456789abc/access_as_user&lt;/code&gt;
  &lt;code&gt;entra-auth-cli discover [options]&lt;/code&gt;
  &lt;/pre&gt;
  &lt;/div&gt;
-&lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;discover&lt;/code&gt; command helps you find Azure AD app registrations in a tenant. You can search by wildcard patterns to locate specific applications.&lt;/p&gt;
-&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h4 id="-t---tenant"&gt;&lt;code&gt;-t&lt;/code&gt;, &lt;code&gt;--tenant&lt;/code&gt; &lt;a href="#-t---tenant" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Tenant ID to search in (required for tenant-specific searches).&lt;/p&gt;
-
-
-
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
-
- 
- 
-
- &lt;div class="prism-codeblock linenos"&gt;
- &lt;pre id="b09b437" class="language-bash line-numbers"&gt;
- &lt;code&gt;entra-auth-cli discover -t contoso.onmicrosoft.com
-entra-auth-cli discover --tenant &amp;#34;12345678-1234-1234-1234-123456789012&amp;#34;&lt;/code&gt;
- &lt;/pre&gt;
- &lt;/div&gt;
-&lt;h4 id="-s---search"&gt;&lt;code&gt;-s&lt;/code&gt;, &lt;code&gt;--search&lt;/code&gt; &lt;a href="#-s---search" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Search pattern with wildcard support.&lt;/p&gt;</description></item><item><title>Interactive Browser Flow</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</guid><description>&lt;h1 id="interactive-browser-flow"&gt;Interactive Browser Flow &lt;a href="#interactive-browser-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Interactive Browser flow provides seamless user authentication by opening your system&amp;rsquo;s default web browser for sign-in, then automatically returning tokens to the CLI. This is the recommended flow for desktop applications and CLI tools that need user authentication.&lt;/p&gt;
+&lt;h2 id="description"&gt;Description &lt;a href="#description" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The &lt;code&gt;discover&lt;/code&gt; command helps you find Azure AD app registrations in a tenant. You can search by wildcard patterns, filter results interactively, and create profiles directly from discovered apps with automatic API permission detection.&lt;/p&gt;
+&lt;h2 id="flags"&gt;Flags &lt;a href="#flags" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h4 id="-t---tenant"&gt;&lt;code&gt;-t&lt;/code&gt;, &lt;code&gt;--tenant&lt;/code&gt; &lt;a href="#-t---tenant" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Tenant ID to search in. If not provided, you&amp;rsquo;ll be prompted to select from existing profile tenants or enter manually.&lt;/p&gt;</description></item><item><title>Interactive Browser Flow</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/oauth-flows/interactive-browser/</guid><description>&lt;h1 id="interactive-browser-flow"&gt;Interactive Browser Flow &lt;a href="#interactive-browser-flow" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The Interactive Browser flow provides seamless user authentication by opening your system&amp;rsquo;s default web browser for sign-in, then automatically returning tokens to the CLI. This is the recommended flow for desktop applications and CLI tools that need user authentication.&lt;/p&gt;
 &lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Use this flow when:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You need user authentication in a CLI or desktop app&lt;/li&gt;
@@ -2070,7 +2071,36 @@ entra-auth-cli discover --tenant &amp;#34;12345678-1234-1234-1234-123456789012&a
 &lt;/table&gt;
 &lt;hr&gt;
 &lt;h2 id="what-gets-stored"&gt;What Gets Stored &lt;a href="#what-gets-stored" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="profile-configuration-plaintext"&gt;Profile Configuration (Plaintext) &lt;a href="#profile-configuration-plaintext" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Location:&lt;/strong&gt; &lt;code&gt;~/.entra-auth-cli/profiles.json&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Stored in plaintext:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>config</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/config/</guid><description>&lt;h1 id="config"&gt;config &lt;a href="#config" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Manage authentication profiles for storing connection settings and credentials.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stored in plaintext:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Client Secret Creation</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/client-secret-creation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/user-guide/client-secret-creation/</guid><description>&lt;h1 id="client-secret-creation"&gt;Client Secret Creation &lt;a href="#client-secret-creation" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Instead of manually creating secrets in the Azure Portal and copying them, you can now create client secrets directly from Entra Auth Cli. The secret is automatically saved to your profile.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="quick-reference"&gt;Quick Reference &lt;a href="#quick-reference" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Feature&lt;/th&gt;
+ &lt;th&gt;Details&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Available in&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;config create&lt;/code&gt;, &lt;code&gt;config edit&lt;/code&gt;, &lt;code&gt;discover&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Secret naming&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;EAC-EXP-DD-MMM-YY&lt;/code&gt; (expiry date)&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Expiry period&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;180 days from creation&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Required permission&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;Application.ReadWrite.All&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="overview"&gt;Overview &lt;a href="#overview" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When configuring a profile with client secret authentication, you&amp;rsquo;re presented with two options:&lt;/p&gt;</description></item><item><title>config</title><link>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://entra-auth-cli-docs.garrardkitchen.com/docs/reference/config/</guid><description>&lt;h1 id="config"&gt;config &lt;a href="#config" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Manage authentication profiles for storing connection settings and credentials.&lt;/p&gt;
 &lt;h2 id="synopsis"&gt;Synopsis &lt;a href="#synopsis" class="anchor" aria-hidden="true"&gt;&lt;i class="material-icons align-middle"&gt;link&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
 
 
